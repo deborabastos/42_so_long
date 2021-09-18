@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 12:54:31 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/06/29 17:09:00 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/09/18 18:56:26 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,18 @@
 **		It returns a pointer to the destination string dest.
 */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncpy(char *dest, char *src, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
-	while (src[i] != '\0' && i < n)
+	if (!dest && !src)
+		return (0);	
+	while (i < n && src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
+	dest[i] = '\0';
 	return (dest);
 }

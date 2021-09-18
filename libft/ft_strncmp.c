@@ -6,11 +6,20 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 22:03:44 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/05/31 13:08:05 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/06/29 12:36:35 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** LIBRARY: <strings.h>
+** DESCRIPTION:
+**		The strncmp() compares the first (at most) n bytes of s1 and s2.
+**		It returns an integer less than, equal to, or greater than zero if s1 
+**	(or the first n bytes thereof) is found, respectively, to be less than, to 
+**	match, or be greater than s2.
+*/
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

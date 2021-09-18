@@ -6,11 +6,23 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 15:58:20 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/06/10 13:41:56 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/06/26 16:55:50 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** LIBRARY: <stdlib.h>
+** DESCRIPTION:
+** 		The atoi() function converts the initial portion of the string pointed
+**	to by str into integer.
+**		Discards whitespace characters (' ' , '\r', '\n', '\f', '\v', '\t') from
+**	the beginning of the string
+**		Accepts the optional "+" or "-" sign at the beggining of the string.
+**		Ignores additional non-numerich characters.
+**		Returns 0 for invalid number or no numeric string.
+*/
 
 int	ft_atoi(const char *str)
 {

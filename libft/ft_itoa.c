@@ -6,34 +6,21 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 21:08:17 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/06/02 16:51:38 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/07/06 18:22:32 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-static int	ft_count_len(int n)
-{
-	int				size;
-	unsigned int	unbr;
-
-	unbr = n;
-	if (n == 0)
-		return (1);
-	size = 0;
-	if (n < 0)
-	{
-		size++;
-		unbr = -unbr;
-	}
-	while (unbr > 0)
-	{
-		size++;
-		unbr = unbr / 10;
-	}
-	return (size);
-}
+/*
+** LIBRARY: N/A
+** DESCRIPTION:
+**		The ft_itoa() function allocates (with malloc)) and returns a string 
+**	representing the integer received as an argument. Negative numbers must be 
+**	handled.
+**		It returns the string representing the integer or NULL if the allocation 
+**	fails.
+*/
 
 char	*ft_itoa(int n)
 {
@@ -41,7 +28,7 @@ char	*ft_itoa(int n)
 	unsigned int	unbr;
 	char			*str;
 
-	size = ft_count_len(n);
+	size = ft_count_digit(n);
 	str = (char *)malloc((size + 1) * sizeof(char));
 	if (!str)
 		return (0);

@@ -6,11 +6,19 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 14:26:50 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/05/31 10:01:51 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/06/29 12:30:46 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** LIBRARY: <strings.h>
+** DESCRIPTION:
+**		The strlcpy() function copies up to size - 1 characters from the NUL-
+**	terminated string src to dst, NUL-terminating the result.
+**		It returns the total length of src. 
+*/
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

@@ -6,11 +6,21 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 15:16:56 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/06/01 18:28:07 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/06/29 11:21:23 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** LIBRARY: <strings.h>
+** DESCRIPTION:
+**		The memccpy() function copies no more than n bytes from memory area src 
+**	to memory area dst, stopping when the character c is found. If the memory 
+**	areas overlap, the results are undefined. 
+**		It returns a pointer to the next character in dst after c, or NULL if 
+**	c was not found in the first n characters of src.
+*/
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {

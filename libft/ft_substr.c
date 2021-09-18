@@ -6,11 +6,20 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:09:31 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/06/04 14:59:04 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/08/04 18:57:02 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** LIBRARY: N/A
+** DESCRIPTION:
+**		The ft_substr() function allocates (with malloc) and returns a substring 
+**	from the string ’s’. The substring begins at index ’start’ and is of maximum 
+**	size ’len’.
+**		It returns the substring or NULL if the allocation fails.
+*/
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

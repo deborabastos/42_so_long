@@ -6,34 +6,21 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 20:53:06 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/06/10 17:25:19 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/08/20 22:19:13 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_count_words(char const *s, char c)
-{
-	size_t	words;
-
-	words = 0;
-	if (*s != c && *s)
-	{
-		s++;
-		words++;
-	}
-	while (*s != '\0')
-	{
-		while (*s == c && *(s + 1) != '\0')
-		{
-			s++;
-			if (*s != c)
-				words++;
-		}
-		s++;
-	}
-	return (words);
-}
+/*
+** LIBRARY: N/A
+** DESCRIPTION:
+**		The ft_split() allocates (with malloc) and returns an array of strings 
+**	obtained by splitting ’s’ using the character ’c’ as a delimiter. The array 
+**	must be ended by a NULL pointer.
+**		It returns the array of new strings resulting from the split or NULL if 
+**	the allocation fails.
+*/
 
 static char	**get_strs(char const *s, char c)
 {

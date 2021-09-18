@@ -6,13 +6,13 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 13:35:15 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/09/17 16:36:20 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/09/18 18:44:23 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	is_line(char *backup)
+static int	is_line(char *backup)
 {
 	int	i;
 

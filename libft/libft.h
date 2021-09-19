@@ -6,12 +6,14 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 17:13:34 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/09/18 18:51:25 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/09/19 11:24:01 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# define BUFFER_SIZE 1024
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -85,6 +87,12 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 
 /*
+** Get Next Line
+*/
+
+int	ft_gnl(int fd, char **line);
+
+/*
 ** Additional Functions - Strings
 */
 
@@ -154,5 +162,6 @@ void	ft_putlnbr(long long int n);
 char	*ft_utoa_base(unsigned int n, char *base);
 char	*ft_uinttoa_base(uintptr_t n, char *base);
 char	*ft_strrev(char *str);
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 12:54:31 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/09/18 18:56:26 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/09/19 12:14:37 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,16 @@ char	*ft_strncpy(char *dest, char *src, size_t n)
 
 	i = 0;
 	if (!dest && !src)
-		return (0);	
+		return (0);
 	while (i < n && src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
 	return (dest);
 }

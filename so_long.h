@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/09/17 18:17:48 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/09/19 14:10:51 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "mlx/mlx.h"
 // # include "libft/libft.h"
-// # include "gnl/get_next_line.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>

@@ -6,12 +6,12 @@
 #    By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2021/09/19 18:24:45 by dalves-p         ###   ########.fr        #
+#    Updated: 2021/09/20 10:55:55 by dalves-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PATH_MLX = ./mlx/
-# clang so_long.c -L ./mlx/ -lmlx -framework OpenGL -framework AppKit -lz
+PATH_MLX	=	./mlx/
+# clang so_long.c -L ./mlx -lmlx -framework OpenGL -framework AppKit -lz
 
 NAME		=	so_long
 CC			=	clang
@@ -25,21 +25,25 @@ OBJS		=	$(SRCS:.c=.o)
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			make -C libft/
-			ar rcs $(NAME) $(OBJS) libft/*.o
+#			make -C libft/
+			$(CC) $(SRCS) $(MLXFLAGS) -o $(NAME)
+# 			clang so_long.c -L ./mlx -lmlx -framework OpenGL -framework AppKit -lz
+			
+			
 
 %o:			%.c
-			$(CC) $(CFLAGS) $(MLXFLAGS) -c $< -o $@
+			$(CC) $(CFLAGS) -Imlx -c $< -o $@
+
+run:		all
+			./$(NAME)
 
 clean:
 			$(RM) $(OBJS)
 
-# bonus:		all
-
 fclean:		clean
 			$(RM) $(NAME)
 			$(RM) *.out
-			make fclean -C libft/
+#			make fclean -C libft/
 
 re:			fclean all
 
@@ -48,5 +52,6 @@ git:
 	@git commit -m "$m"
 	@git push
 	@echo "Commit sent to github"
+# Para chamar: make git m="meu commit"
 
 .PHONY:		all clean fclean re

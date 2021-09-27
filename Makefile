@@ -6,7 +6,7 @@
 #    By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2021/09/22 21:10:38 by dalves-p         ###   ########.fr        #
+#    Updated: 2021/09/27 15:23:12 by dalves-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 #			make -C libft/
+#			make -C mlx/
 			$(CC) $(SRCS) $(MLXFLAGS) -o $(NAME)
 # 			clang so_long.c -L ./mlx -lmlx -framework OpenGL -framework AppKit -lz
 			

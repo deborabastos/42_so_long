@@ -5,6 +5,7 @@ The aim of this project is to develop a simple top-view 2D game, using miniLibX 
 - https://github.com/42Paris/minilibx-linux
 - https://harm-smits.github.io/42docs/libs/minilibx/introduction.html
 - https://elearning.intra.42.fr/notions/minilibx/subnotions
+- https://github.com/taelee42/mlx_example
 
 ## Mac and Linux
 - https://github.com/JCluzet/so_long

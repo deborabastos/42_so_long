@@ -9,6 +9,7 @@ The aim of this project is to develop a simple top-view 2D game, using miniLibX 
 ## Mac and Linux
 - https://github.com/JCluzet/so_long
 - https://github.com/krolhm/so_long
+- makefile: https://github.com/krolhm/so_long/blob/main/Makefile
 
 ## Mac
 - https://github.com/josuhee/42_so_long

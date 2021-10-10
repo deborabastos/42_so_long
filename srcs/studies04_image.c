@@ -1,17 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   studies04_print_image.c                            :+:      :+:    :+:   */
+/*   studies04_image.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/09/28 20:54:14 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/09/30 15:34:26 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include <unistd.h>
+#include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
+#include <math.h>
+#include <string.h>
+#include "../mlx/mlx.h"
 
 #define X_EVENT_KEY_PRESS		2
 #define X_EVENT_KEY_EXIT		17
@@ -42,13 +47,13 @@ int main(void)
 	mlx = mlx_init();
 	win = mlx_new_window(mlx, 500, 500, "my_mlx");
 
-	img = mlx_xpm_file_to_image(mlx, "./textures/wall_n.xpm", &img_width, &img_height);
+	img = mlx_xpm_file_to_image(mlx, "./img/wall_n.xpm", &img_width, &img_height);
 	mlx_put_image_to_window(mlx, win, img, 0, 0);
-	img = mlx_xpm_file_to_image(mlx, "./textures/wall_s.xpm", &img_width, &img_height);
+	img = mlx_xpm_file_to_image(mlx, "./img/wall_s.xpm", &img_width, &img_height);
 	mlx_put_image_to_window(mlx, win, img, 64, 0);
-	img = mlx_xpm_file_to_image(mlx, "./textures/wall_e.xpm", &img_width, &img_height);
+	img = mlx_xpm_file_to_image(mlx, "./img/wall_e.xpm", &img_width, &img_height);
 	mlx_put_image_to_window(mlx, win, img, 128, 0);
-	img = mlx_xpm_file_to_image(mlx, "./textures/wall_w.xpm", &img_width, &img_height);
+	img = mlx_xpm_file_to_image(mlx, "./img/wall_w.xpm", &img_width, &img_height);
 	mlx_put_image_to_window(mlx, win, img, 192, 0);
 
 	mlx_hook(win, X_EVENT_KEY_PRESS, 1L<<0, key_press, win); 

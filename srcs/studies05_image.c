@@ -1,17 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   studies05_image.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/09/28 22:47:38 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/09/30 15:34:20 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include <unistd.h>
+#include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
+#include <math.h>
+#include <string.h>
+#include "../mlx/mlx.h"
 
 #define WIN_WIDTH				800
 #define WIN_HEIGHT				600
@@ -34,9 +39,6 @@ typedef struct	s_mlx {
 	void	*mlx_ptr;
 	void	*win;
 }	t_mlx;
-
-
-
 
 // Close windows and end program if button x is clicked
 int	mlx_close(t_mlx *vars)
@@ -61,7 +63,7 @@ int	main(void)
 
 	mlx.mlx_ptr = mlx_init();
 	mlx.win = mlx_new_window(mlx.mlx_ptr, WIN_WIDTH, WIN_HEIGHT, "Image exemple");
-	img.img_ptr= mlx_new_image(mlx.mlx_ptr, IMG_WIDTH, IMG_HEIGHT);
+	img.img_ptr = mlx_new_image(mlx.mlx_ptr, IMG_WIDTH, IMG_HEIGHT);
 	
 	/*
 	** After creating an image, we can call `mlx_get_data_addr`, we pass

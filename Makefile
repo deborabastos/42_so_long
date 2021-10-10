@@ -6,7 +6,7 @@
 #    By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2021/09/28 18:40:37 by dalves-p         ###   ########.fr        #
+#    Updated: 2021/09/30 16:21:21 by dalves-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ PATH_MLX	=	./mlx/
 
 NAME		=	so_long
 CC			=	clang
-SRCS		=	so_long.c
+SRCS		=	srcs/so_long.c \
+				# srcs/key_manager.c \
+				
 # CFLAGS		=	-Wall -Wextra -Werror
 # MLXFLAGS	=	-L $(PATH_MLX) -lmlx -Ilmlx -lXext -lX11 (LINUX)
 MLXFLAGS	=	-L $(PATH_MLX) -lmlx -framework OpenGL -framework AppKit -lz

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   studies07_movements.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/14 22:00:17 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/14 22:37:16 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@
 #define S_KEY					1	
 #define D_KEY					2
 #define W_KEY					13
-
-
 
 #define SPRITE_SIZE				64
 
@@ -101,7 +99,7 @@ int	main(void)
 	var.sprite_pos.y = 0;
 
 	var.mlx = mlx_init();
-	var.win = mlx_new_window(var.mlx, 8*SPRITE_SIZE, 8*SPRITE_SIZE, "Sample");
+	var.win = mlx_new_window(var.mlx, 8 * SPRITE_SIZE, 8 * SPRITE_SIZE, "Sample");
 
 	var.sprite.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/block.xpm", &var.sprite.size.x, &var.sprite.size.y);
 	mlx_put_image_to_window(var.mlx, var.win, var.sprite.img_ptr, var.sprite_pos.x, var.sprite_pos.y);

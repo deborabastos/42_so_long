@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/18 18:34:41 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/18 18:35:03 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,11 @@ int get_map(t_var var)
 					mlx_put_image_to_window(var.mlx, var.win, var.floor.img_ptr, SPRITE_W * col, SPRITE_H * row);	
 				col++;
 			}
+			free(line);
 			row++;
 		}		
 		free(line);	
 	}
-	free(line);
 	return (0);
 }
 

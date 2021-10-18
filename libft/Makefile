@@ -22,16 +22,16 @@ OBJS	=	$(SRCS:.c=.o)
 all:		$(NAME)
 
 .c.o:
-			$(CC) $(CFLAGS) -c $<
+			@$(CC) $(CFLAGS) -c $<
 
 $(NAME):	$(OBJS)
-			ar rcs $(NAME) $(OBJS)
+			@ar rcs $(NAME) $(OBJS)
 
 clean:
-			$(RM) $(OBJS)
+			@$(RM) $(OBJS)
 
 fclean:		clean
-			$(RM) $(NAME)
+			@$(RM) $(NAME)
 
 re:			fclean all
 

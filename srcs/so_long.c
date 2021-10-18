@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/18 18:33:48 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/18 18:34:41 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ int get_map(t_var var)
 	var.floor.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/floor.xpm", &var.floor.size.x, &var.floor.size.y);
 	var.tree.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/tree.xpm", &var.tree.size.x, &var.tree.size.y);
 	
-
 	fd = open("./maps/map.ber", O_RDONLY);
 	if (fd == -1)
 		return (1);
@@ -89,37 +88,7 @@ int get_map(t_var var)
 		}		
 		free(line);	
 	}
-	// free(line);
-
-	// while (ft_gnl(fd, &line) > 0)
-	// {
-		// printf("%s\n", line);
-
-		// if(map[i] == '1')
-			// mlx_put_image_to_window(var.mlx, var.win, var.tree.img_ptr, SPRITE_W * i, SPRITE_H * j);
-		// else
-			// mlx_put_image_to_window(var.mlx, var.win, var.floor.img_ptr, SPRITE_W * i, SPRITE_H * j);	
-	
-		// free(line);		
-	// }
-	// free(line);
-	// close(fd);
-	
-	// i = 0;
-	// j = 0;
-	// while (j < ROWS)
-	// {
-	// 	while (i < COLUMNS)
-	// 	{
-	// 		if(map[i] == '1')
-	// 			mlx_put_image_to_window(var.mlx, var.win, var.tree.img_ptr, SPRITE_W * i, SPRITE_H * j);
-	// 		else
-	// 			mlx_put_image_to_window(var.mlx, var.win, var.floor.img_ptr, SPRITE_W * i, SPRITE_H * j);	
-	// 		i++;
-	// 	}
-	// 	i = 0;
-	// 	j++;
-	// }
+	free(line);
 	return (0);
 }
 

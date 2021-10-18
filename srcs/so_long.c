@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/18 15:12:50 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/18 18:33:48 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ int get_map(t_var var)
 {
 	int		fd;
 	char	*line;
-	int		i;
+	int		col;
+	int		row;
 
 	var.floor.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/floor.xpm", &var.floor.size.x, &var.floor.size.y);
 	var.tree.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/tree.xpm", &var.tree.size.x, &var.tree.size.y);
@@ -69,16 +70,26 @@ int get_map(t_var var)
 	fd = open("./maps/map.ber", O_RDONLY);
 	if (fd == -1)
 		return (1);
-	ft_gnl(fd, &line);
-	while (line[i])
+	col = 0;
+	row = 0;
+	while (row < ROWS)
 	{
-		printf("%c", line[i]);
-		if(line[i] == '1')
-			mlx_put_image_to_window(var.mlx, var.win, var.tree.img_ptr, SPRITE_W * i, 0);
-		else
-			mlx_put_image_to_window(var.mlx, var.win, var.floor.img_ptr, SPRITE_W * i, 0);	
-		i++;
+		while (ft_gnl(fd, &line) > 0)
+		{
+			col = 0;
+			while (col < COLUMNS)
+			{
+				if(line[col] == '1')
+					mlx_put_image_to_window(var.mlx, var.win, var.tree.img_ptr, SPRITE_W * col, SPRITE_H * row);
+				else 
+					mlx_put_image_to_window(var.mlx, var.win, var.floor.img_ptr, SPRITE_W * col, SPRITE_H * row);	
+				col++;
+			}
+			row++;
+		}		
+		free(line);	
 	}
+	// free(line);
 
 	// while (ft_gnl(fd, &line) > 0)
 	// {

@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/18 11:00:22 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/18 11:28:02 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,12 @@ int key_press(int keycode, t_var *vars)
 }
 
 
-int	main(void)
+int print_map(t_var	var)
 {
-	t_var	var;
 	char	map[10] = {"1000110011"};
 	int		i;
 	int		j;
-
-	var.mlx = mlx_init();
-	var.win = mlx_new_window(var.mlx, COLUMNS * SPRITE_W, ROWS * SPRITE_H, "Sample");
-
+	
 	var.floor.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/floor.xpm", &var.floor.size.x, &var.floor.size.y);
 	var.tree.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/tree.xpm", &var.tree.size.x, &var.tree.size.y);
 	
@@ -103,6 +99,17 @@ int	main(void)
 	}
 	
 
+
+}
+
+
+int	main(void)
+{
+	t_var	var;
+
+	var.mlx = mlx_init();
+	var.win = mlx_new_window(var.mlx, COLUMNS * SPRITE_W, ROWS * SPRITE_H, "Sample");
+	print_map(var);
 
 	mlx_hook(var.win, X_EVENT_KEY_PRESS, 1L<<0, key_press, &var); 
 	mlx_hook(var.win, X_EVENT_KEY_EXIT, 1L<<0, mlx_close, &var);

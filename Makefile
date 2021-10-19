@@ -6,7 +6,7 @@
 #    By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2021/10/18 14:57:09 by dalves-p         ###   ########.fr        #
+#    Updated: 2021/10/19 15:04:16 by dalves-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ PATH_MLX	=	./mlx/
 NAME		=	so_long
 CC			=	clang
 SRCS		=	srcs/so_long.c \
-				# srcs/key_manager.c
+				srcs/key_manager.c \
+				srcs/maps.c \
+
 LIBFT		=	libft/libft.a
 # CFLAGS		=	-Wall -Wextra -Werror
 # MLXFLAGS	=	-L $(PATH_MLX) -lmlx -Ilmlx -lXext -lX11 (LINUX)
@@ -29,11 +31,11 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 #			@make -C libft	
 #			@make clean -C libft
-			@$(CC) $(SRCS) $(LIBFT) $(MLXFLAGS) -o $(NAME)
+			$(CC) $(SRCS) $(LIBFT) $(MLXFLAGS) -o $(NAME)
 # 			clang so_long.c -L ./mlx -lmlx -framework OpenGL -framework AppKit -lz -o so_long
 
 %o:			%.c
-			@$(CC) $(CFLAGS) -Imlx -c $< -o $@
+			$(CC) $(CFLAGS) -Imlx -c $< -o $@
 
 run:		all
 			./$(NAME)

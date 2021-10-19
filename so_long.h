@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/18 15:10:17 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/19 15:08:01 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,55 @@
 #define S_KEY					1	
 #define D_KEY					2
 #define W_KEY					13
-# define ESC 53
+# define ESC 					53
 
-#define ROWS					5
+#define ROWS					8
 #define COLUMNS					13
 #define SPRITE_H				64
 #define SPRITE_W				64
+
+typedef struct s_vector
+{
+	int	x;
+	int	y;
+}	t_vector;
+
+typedef struct s_img
+{
+	void		*img_ptr;
+	t_vector	size;
+	t_vector	position;
+	int			*addr;
+	int			bpp;
+	int			line_len;
+	int			endian;
+}	t_img;
+
+typedef struct s_map
+{
+	void		*map_ptr;
+	t_vector	size;
+}	t_map;
+
+typedef struct	s_var {
+	void		*mlx;
+	void		*win;
+	t_map		map;
+	t_img		sprite;
+	t_img		floor;
+	t_img		tree;
+	t_img		exit;
+	t_img		collectible;
+}	t_var;
+
+
+int	print_map(t_var var, int fd, char *line);
+int get_map(t_var var);
+int key_press(int keycode, t_var *vars);
+int	mlx_close(t_var vars);
+
+
+
 
 
 #endif

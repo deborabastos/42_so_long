@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/15 14:15:01 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/19 17:05:52 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,8 +101,6 @@ int	main(void)
 
 	var.sprite.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/block.xpm", &var.sprite.size.x, &var.sprite.size.y);
 	mlx_put_image_to_window(var.mlx, var.win, var.sprite.img_ptr, var.sprite.position.x, var.sprite.position.y);
-
-
 
 	mlx_hook(var.win, X_EVENT_KEY_PRESS, 1L<<0, key_press, &var); 
 	mlx_hook(var.win, X_EVENT_KEY_EXIT, 1L<<0, mlx_close, &var);

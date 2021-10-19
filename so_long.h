@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/19 15:08:01 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/19 17:06:55 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,23 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 
+# define X_EVENT_KEY_PRESS		2
+# define X_EVENT_KEY_EXIT		17
 
-#define X_EVENT_KEY_PRESS		2
-#define X_EVENT_KEY_EXIT		17
-
-#define LEFT_KEY				123	
-#define RIGHT_KEY				124	
-#define UP_KEY					126
-#define DOWN_KEY				125	
-#define A_KEY					0
-#define S_KEY					1	
-#define D_KEY					2
-#define W_KEY					13
+# define LEFT_KEY				123	
+# define RIGHT_KEY				124	
+# define UP_KEY					126
+# define DOWN_KEY				125	
+# define A_KEY					0
+# define S_KEY					1	
+# define D_KEY					2
+# define W_KEY					13
 # define ESC 					53
 
-#define ROWS					8
-#define COLUMNS					13
-#define SPRITE_H				64
-#define SPRITE_W				64
+# define ROWS					8
+# define COLUMNS					13
+# define SPRITE_H				64
+# define SPRITE_W				64
 
 typedef struct s_vector
 {
@@ -67,7 +66,7 @@ typedef struct s_map
 	t_vector	size;
 }	t_map;
 
-typedef struct	s_var {
+typedef struct s_var {
 	void		*mlx;
 	void		*win;
 	t_map		map;
@@ -78,14 +77,7 @@ typedef struct	s_var {
 	t_img		collectible;
 }	t_var;
 
-
-int	print_map(t_var var, int fd, char *line);
-int get_map(t_var var);
-int key_press(int keycode, t_var *vars);
-int	mlx_close(t_var vars);
-
-
-
-
-
+int	get_map(t_var var);
+int	key_press(int key);
+int	mlx_close(void);
 #endif

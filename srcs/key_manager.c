@@ -6,20 +6,20 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 15:23:46 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/19 14:58:34 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/19 17:06:45 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	mlx_close(t_var vars)
+int	mlx_close(void)
 {
 	exit(0);
 }
 
-int key_press(int keycode, t_var *vars)
+int	key_press(int key)
 {
-	if (keycode == 53)
+	if (key == 53)
 		exit(0);
 	return (0);
 }

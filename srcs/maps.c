@@ -6,11 +6,38 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/19 17:09:17 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/19 22:37:00 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+int	get_map_x(t_var var)
+{
+	int		fd;
+	char	*line;
+
+	fd = open("./maps/map.ber", O_RDONLY);
+	if (fd == -1)
+		return (1);
+	while (ft_gnl(fd, &line) > 0)
+		var.map.size.x = strlen(line);
+	return (var.map.size.x);
+}
+
+int	get_map_y(t_var var)
+{
+	int		fd;
+	char	*line;
+
+	fd = open("./maps/map.ber", O_RDONLY);
+	if (fd == -1)
+		return (1);
+	var.map.size.x = 0;
+	while (ft_gnl(fd, &line) > 0)
+		var.map.size.x++;
+	return (var.map.size.x);
+}
 
 int	print_sprite(t_var var, char *line, int col, int row)
 {
@@ -42,7 +69,7 @@ int	print_map(t_var var, int fd)
 	while ((ft_gnl(fd, &line) > 0) && row < ROWS)
 	{
 		col = 0;
-		while (col < COLUMNS)
+		while (col < var.map.size.x)
 		{
 			print_sprite(var, line, col, row);
 			col++;
@@ -50,6 +77,7 @@ int	print_map(t_var var, int fd)
 		free(line);
 		row++;
 	}
+	free(line);
 	return (0);
 }
 
@@ -71,5 +99,6 @@ int	get_map(t_var var)
 	if (fd == -1)
 		return (1);
 	print_map(var, fd);
+	close(fd);
 	return (0);
 }

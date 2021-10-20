@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/20 10:53:56 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/20 11:11:31 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,11 +105,6 @@ int	get_map(t_var var)
 	var.collectible.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/collec.xpm",
 			&var.collectible.size.x, &var.collectible.size.y);
 	fd = open(PATH_MAP, O_RDONLY);
-	if (fd == -1)
-	{
-		perror(PATH_MAP);
-		exit (EXIT_FAILURE);
-	}
 	print_map(var, fd);
 	close(fd);
 	return (0);

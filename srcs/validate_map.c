@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 22:45:38 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/20 20:25:32 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:48:42 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,14 @@
 
 int	check_row(char *line)
 {
-	int		col;	
-
-	col = 0;
-	while (line[col])
+	while (*line)
 	{
-		if (line[col] != '1')
+		if (*line != '1')
 		{
-			perror("Top or Down wall not configured");
+			perror("Invalid map: top or down wall not configured");
 			exit (EXIT_FAILURE);
 		}
-		col++;
+		line++;
 	}
 	return (0);
 }
@@ -43,13 +40,12 @@ int	check_walls(t_var var)
 			check_row(line);
 		if (line[0] != '1' || line[var.map.size.x - 1] != '1')
 		{
-			perror("Lateral wall not configured");
+			perror("Invalid map: lateral wall not configured");
 			exit (EXIT_FAILURE);
 		}
 		row++;
 	}
-	if (row == var.map.size.y - 1)
-		check_row(line);
+	check_row(line);
 	close(fd);
 	return (0);
 }
@@ -84,7 +80,8 @@ int	check_sprites(t_var var)
 		check_pec(var, line, has);
 	if (has[0] != 'P' || has[1] != 'E' || has[2] != 'C')
 	{
-		perror("Misssing PEC");
+		free(has);
+		perror("Invalid map: misssing PEC");
 		exit (EXIT_FAILURE);
 	}
 	free(has);
@@ -95,15 +92,23 @@ int	check_sprites(t_var var)
 int	check_char(void)
 {
 	int		fd;
+	int		col;	
 	char	*line;
 
 	fd = open(PATH_MAP, O_RDONLY);
 	while (ft_gnl(fd, &line))
 	{
-		if (*line != 0 || *line != 1 || *line != 'P' || *line != 'E' || *line != 'C')
-			printf("weird char");
+		col = 0;
+		while (line[col])
+		{
+			if (line[col] != '0' && line[col] != '1' && line[col] != 'P' && line[col] != 'E' && line[col] != 'C')
+			{
+				perror("Invalid map: char not permited");
+				exit (EXIT_FAILURE);
+			}	
+			col++;
+		}
 	}
-	free(has);
 	close(fd);
 	return (0);
 }

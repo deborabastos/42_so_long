@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/19 22:37:00 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/20 10:53:56 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,15 @@ int	get_map_x(t_var var)
 	int		fd;
 	char	*line;
 
-	fd = open("./maps/map.ber", O_RDONLY);
+	fd = open(PATH_MAP, O_RDONLY);
 	if (fd == -1)
-		return (1);
+	{
+		perror("Map error");
+		exit (EXIT_FAILURE);
+	}
 	while (ft_gnl(fd, &line) > 0)
 		var.map.size.x = strlen(line);
+	close(fd);
 	return (var.map.size.x);
 }
 
@@ -30,13 +34,18 @@ int	get_map_y(t_var var)
 	int		fd;
 	char	*line;
 
-	fd = open("./maps/map.ber", O_RDONLY);
+	fd = open(PATH_MAP, O_RDONLY);
 	if (fd == -1)
-		return (1);
-	var.map.size.x = 0;
+	{
+		perror("Map error");
+		exit (EXIT_FAILURE);
+	}
+	var.map.size.y = 0;
 	while (ft_gnl(fd, &line) > 0)
-		var.map.size.x++;
-	return (var.map.size.x);
+		var.map.size.y++;
+	var.map.size.y++;
+	close(fd);
+	return (var.map.size.y);
 }
 
 int	print_sprite(t_var var, char *line, int col, int row)
@@ -66,7 +75,7 @@ int	print_map(t_var var, int fd)
 	char	*line;
 
 	row = 0;
-	while ((ft_gnl(fd, &line) > 0) && row < ROWS)
+	while ((ft_gnl(fd, &line) >= 0) && row < ROWS)
 	{
 		col = 0;
 		while (col < var.map.size.x)
@@ -95,9 +104,12 @@ int	get_map(t_var var)
 			&var.exit.size.x, &var.exit.size.y);
 	var.collectible.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/collec.xpm",
 			&var.collectible.size.x, &var.collectible.size.y);
-	fd = open("./maps/map.ber", O_RDONLY);
+	fd = open(PATH_MAP, O_RDONLY);
 	if (fd == -1)
-		return (1);
+	{
+		perror(PATH_MAP);
+		exit (EXIT_FAILURE);
+	}
 	print_map(var, fd);
 	close(fd);
 	return (0);

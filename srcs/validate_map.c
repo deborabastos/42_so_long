@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 22:45:38 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/20 20:02:14 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:25:32 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,26 @@ int	check_sprites(t_var var)
 	return (0);
 }
 
+int	check_char(void)
+{
+	int		fd;
+	char	*line;
+
+	fd = open(PATH_MAP, O_RDONLY);
+	while (ft_gnl(fd, &line))
+	{
+		if (*line != 0 || *line != 1 || *line != 'P' || *line != 'E' || *line != 'C')
+			printf("weird char");
+	}
+	free(has);
+	close(fd);
+	return (0);
+}
+
 int	check_map(t_var var)
 {
 	check_walls(var);
 	check_sprites(var);
+	check_char();
 	return (0);
 }

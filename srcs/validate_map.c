@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 22:45:38 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/20 20:00:30 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:02:14 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,11 @@ int	check_sprites(t_var var)
 	fd = open(PATH_MAP, O_RDONLY);
 	while (ft_gnl(fd, &line) > 0)
 		check_pec(var, line, has);
-	printf("%c%c%c\n", has[0], has[1], has[2]);
 	if (has[0] != 'P' || has[1] != 'E' || has[2] != 'C')
-		printf("missing\n");
+	{
+		perror("Misssing PEC");
+		exit (EXIT_FAILURE);
+	}
 	free(has);
 	close(fd);
 	return (0);

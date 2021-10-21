@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 22:45:38 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/20 22:52:50 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/20 22:54:32 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,8 @@ int	check_ret(t_var var)
 		row++;
 	}
 	close(fd);
-	return (0);	
+	return (0);
 }
-
 
 int	check_char(void)
 {

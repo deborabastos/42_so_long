@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/20 20:07:46 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/20 21:09:06 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ int	mlx_close(void);
 int	get_map_x(t_var var);
 int	get_map_y(t_var var);
 int	check_map(t_var var);
+int	error(char *msg);
 
 #endif

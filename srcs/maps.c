@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/20 11:11:31 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/20 21:07:43 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ int	get_map_x(t_var var)
 
 	fd = open(PATH_MAP, O_RDONLY);
 	if (fd == -1)
-	{
-		perror("Map error");
-		exit (EXIT_FAILURE);
-	}
+		error("Map error");
 	while (ft_gnl(fd, &line) > 0)
 		var.map.size.x = strlen(line);
 	close(fd);
@@ -36,10 +33,7 @@ int	get_map_y(t_var var)
 
 	fd = open(PATH_MAP, O_RDONLY);
 	if (fd == -1)
-	{
-		perror("Map error");
-		exit (EXIT_FAILURE);
-	}
+		error("Map error");
 	var.map.size.y = 0;
 	while (ft_gnl(fd, &line) > 0)
 		var.map.size.y++;

@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/09/30 15:33:37 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/22 14:48:08 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <string.h>
 #include "../mlx/mlx.h"
 
-int main(void)
+int	main(void)
 {
 	void	*mlx_ptr;
 	void	*win_ptr;

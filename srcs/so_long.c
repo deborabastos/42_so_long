@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/25 14:45:44 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/25 16:10:51 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@ int	main(void)
 {
 	t_var	var;
 
+	// var.map.size.x = 0;
+	// var.map.size.y = 0;
 
-	get_map(&var);
+	// get_map(var);
 	var.mlx = mlx_init();
-	// var.map.size.x = get_map_x(var);
-	// var.map.size.y = get_map_y(var);
+	var.map.size.x = get_map_x(var);
+	var.map.size.y = get_map_y(var);
 	var.win = mlx_new_window(var.mlx, var.map.size.x * SPRITE_W, var.map.size.y
 			* SPRITE_H, "So long");
 	check_map(var);

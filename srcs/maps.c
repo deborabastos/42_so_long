@@ -6,41 +6,62 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/25 14:44:49 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/25 14:48:00 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	get_map_x(t_var var)
+int	get_map(t_var var)
 {
 	int		fd;
 	char	*line;
 
+	var.map.size.x = 0;
+	var.map.size.y = 0;
 	fd = open(PATH_MAP, O_RDONLY);
 	if (fd == -1)
 		error("Map error");
-	while (ft_gnl(fd, &line) > 0)
+	while (ft_gnl(fd, &line))
+	{
+		printf("x: %d\n", var.map.size.x);
+		printf("y: %d\n", var.map.size.y);
 		var.map.size.x = strlen(line);
+		var.map.size.y++;
+	}
 	close(fd);
 	return (var.map.size.x);
 }
 
-int	get_map_y(t_var var)
-{
-	int		fd;
-	char	*line;
+// int	get_map_x(t_var var)
+// {
+// 	int		fd;
+// 	char	*line;
 
-	fd = open(PATH_MAP, O_RDONLY);
-	if (fd == -1)
-		error("Map error");
-	var.map.size.y = 0;
-	while (ft_gnl(fd, &line) > 0)
-		var.map.size.y++;
-	var.map.size.y++;
-	close(fd);
-	return (var.map.size.y);
-}
+// 	fd = open(PATH_MAP, O_RDONLY);
+// 	if (fd == -1)
+// 		error("Map error");
+// 	while (ft_gnl(fd, &line) > 0)
+// 		var.map.size.x = strlen(line);
+// 	close(fd);
+// 	return (var.map.size.x);
+// }
+
+// int	get_map_y(t_var var)
+// {
+// 	int		fd;
+// 	char	*line;
+
+// 	fd = open(PATH_MAP, O_RDONLY);
+// 	if (fd == -1)
+// 		error("Map error");
+// 	var.map.size.y = 0;
+// 	while (ft_gnl(fd, &line) > 0)
+// 		var.map.size.y++;
+// 	var.map.size.y++;
+// 	close(fd);
+// 	return (var.map.size.y);
+// }
 
 int	print_sprite(t_var var, char *line, int col, int row)
 {

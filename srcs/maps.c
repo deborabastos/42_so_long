@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/20 21:07:43 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/25 14:44:49 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	print_map(t_var var, int fd)
 	return (0);
 }
 
-int	get_map(t_var var)
+int	load_map(t_var var)
 {
 	int		fd;
 

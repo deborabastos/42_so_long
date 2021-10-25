@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/25 20:04:02 by dalves-p         ###   ########.fr       */
+/*   Created: 2021/10/20 20:58:18 by dalves-p          #+#    #+#             */
+/*   Updated: 2021/10/20 21:00:54 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	main(void)
+int	error(char *msg)
 {
-	t_var	var;
-
-	get_map(&var);
-	printf("Main x: %d\n", var.map.size.x);
-	printf("Main y: %d\n", var.map.size.y);
-	var.mlx = mlx_init();
-	var.win = mlx_new_window(var.mlx, var.map.size.x * SPRITE_W, var.map.size.y
-			* SPRITE_H, "So long");
-	check_map(var);
-	load_map(var);
-	mlx_hook(var.win, X_EVENT_KEY_PRESS, 1L << 0, key_press, &var);
-	mlx_hook(var.win, X_EVENT_KEY_EXIT, 1L << 0, mlx_close, &var);
-	mlx_loop(var.mlx);
+	perror(msg);
+	exit (EXIT_FAILURE);
+	return (0);
 }

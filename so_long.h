@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/25 16:12:18 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/25 20:04:52 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ typedef struct s_var {
 	t_img		collectible;
 }	t_var;
 
-// int	get_map(t_var var);
+int	get_map(t_var *var);
 int	load_map(t_var var);
 int	key_press(int key);
 int	mlx_close(void);

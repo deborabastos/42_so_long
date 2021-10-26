@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/25 20:13:34 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/25 20:40:31 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@
 # define W_KEY					13
 # define ESC 					53
 
-# define ROWS					8
 # define SPRITE_H				64
 # define SPRITE_W				64
 

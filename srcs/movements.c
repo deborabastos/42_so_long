@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 17:37:31 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/25 22:23:07 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/25 22:36:49 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,28 @@ int get_init_position(t_var *var)
 	}
 	return (0);
 }
+
+// int count_collec(t_var *var)
+// {
+// 	int		row;
+// 	int		col;
+
+// 	row = 0;
+// 	var->collectible.count = 0;
+// 	printf("entreou\n");
+// 	while (row < var->map.size.y)
+// 	{
+// 		col = 0;
+// 		while (col <= var->map.size.x)
+// 		{
+// 			if (var->map.map_mtx[row][col] == 'C')
+// 				var->collectible.count++;
+// 			col++;
+// 		}
+// 		row++;
+// 	}
+// 	return (0);	
+// }
 
 int	key_press(int key, t_var *var)
 {

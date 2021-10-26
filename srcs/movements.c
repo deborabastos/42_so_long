@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 17:37:31 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/25 22:19:50 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/25 22:23:07 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,6 @@ int get_init_position(t_var *var)
 	}
 	return (0);
 }
-
-// int render(t_var var)
-// {
-// 	int		row;
-// 	int		col;
-
-// 	var.map.map_mtx[var.sprite.position.y][var.sprite.position.x] = 0;
-
-// 	return (0);
-// }
-
 
 int	key_press(int key, t_var *var)
 {

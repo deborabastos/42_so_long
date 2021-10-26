@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/25 21:09:09 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/25 21:14:36 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,11 @@ int	get_map(t_var *var)
 	}
 	var->map.map_mtx[row] = line;	
 	var->map.size.y++;
-
-	// row = 0;
-	// while(row < var->map.size.y)
-	// {
-	// 	printf("%s\n", var->map.map_mtx[row]);
-	// 	row++;
-	// }
 	close(fd);
 	return (0);
 }
 
-int	print_sprite(t_var var, int col, int row)
+int	print_square(t_var var, int col, int row)
 {
 	if (var.map.map_mtx[row][col] == '1')
 		mlx_put_image_to_window(var.mlx, var.win, var.tree.img_ptr,
@@ -73,7 +66,7 @@ int	print_map(t_var var)
 		col = 0;
 		while (col < var.map.size.x)
 		{
-			print_sprite(var, col, row);
+			print_square(var, col, row);
 			col++;
 		}
 		row++;

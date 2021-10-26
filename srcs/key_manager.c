@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 15:23:46 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/22 15:49:02 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/25 21:50:48 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ int	mlx_close(void)
 	exit(0);
 }
 
-int	key_press(int key)
+int	key_esc(int key)
 {
 	if (key == 53)
 		exit(0);
-	return (0);
-}
+	return (0);}

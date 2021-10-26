@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/25 20:13:52 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/25 21:58:34 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(void)
 			* SPRITE_H, "So long");
 	check_map(var);
 	load_map(var);
+	get_init_position(&var);
 	mlx_hook(var.win, X_EVENT_KEY_PRESS, 1L << 0, key_press, &var);
 	mlx_hook(var.win, X_EVENT_KEY_EXIT, 1L << 0, mlx_close, &var);
 	mlx_loop(var.mlx);

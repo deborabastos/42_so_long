@@ -6,20 +6,18 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 17:13:34 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/09/19 11:24:01 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/28 14:48:15 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define BUFFER_SIZE 1024
+# define BUFFER_SIZE	1024
+# define OPEN_MAX		255
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-# include <string.h>
-# include <stdint.h>
+# include <unistd.h> // write, read
+# include <stdlib.h> // malloc, free, exit
 
 typedef struct s_list
 {

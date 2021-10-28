@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 18:24:49 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/08/19 11:02:59 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/28 14:50:27 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_count_digit(long long int n)
 	if (n == 0)
 		return (1);
 	c = 0;
-	if (n == LONG_MIN)
+	if (n < -9223372036854775807)
 	{
 		c++;
 		n = n / 10;

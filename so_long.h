@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/25 22:43:17 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/28 14:04:35 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,11 @@
 # include "mlx/mlx.h"
 # include "libft/libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <limits.h>
-# include <math.h>
-# include <string.h>
-# include <sys/stat.h>
-# include <fcntl.h>
+# include <unistd.h> // write, read
+# include <stdlib.h> // malloc, free, exit
+# include <stdio.h> //printf, perror
+# include <string.h> // strerror
+# include <fcntl.h> // open, close, read
 
 # define PATH_MAP				"./maps/map.ber"
 
@@ -67,10 +64,18 @@ typedef struct s_map
 	t_vector	size;
 }	t_map;
 
+typedef struct s_game
+{
+	int			count_collec;
+	int			count_steps;
+
+} t_game;
+
 typedef struct s_var
 {
 	void		*mlx;
 	void		*win;
+	t_game		game;
 	t_map		map;
 	t_img		sprite;
 	t_img		floor;
@@ -89,6 +94,6 @@ int	check_map(t_var var);
 int	print_map(t_var var);
 int	error(char *msg);
 int get_init_position(t_var *var);
-// int count_collec(t_var *var);
+int count_collec(t_var *var);
 
 #endif

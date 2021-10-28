@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 17:13:34 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/28 14:48:15 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/28 14:57:52 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # define BUFFER_SIZE	1024
 # define OPEN_MAX		255
 
-# include <unistd.h> // write, read
-# include <stdlib.h> // malloc, free, exit
+# include <unistd.h>
+# include <stdlib.h>
 
 typedef struct s_list
 {

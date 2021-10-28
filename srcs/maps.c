@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/25 21:14:36 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/28 17:56:25 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	get_map(t_var *var)
 		var->map.map_mtx[row] = line;
 		row++;
 	}
-	var->map.map_mtx[row] = line;	
+	var->map.map_mtx[row] = line;
 	var->map.size.y++;
 	close(fd);
 	return (0);
@@ -41,7 +41,7 @@ int	print_square(t_var var, int col, int row)
 		mlx_put_image_to_window(var.mlx, var.win, var.tree.img_ptr,
 			SPRITE_W * col, SPRITE_H * row);
 	else if (var.map.map_mtx[row][col] == 'P')
-		mlx_put_image_to_window(var.mlx, var.win, var.sprite.img_ptr,
+		mlx_put_image_to_window(var.mlx, var.win, var.spt.img_ptr,
 			SPRITE_W * col, SPRITE_H * row);
 	else if (var.map.map_mtx[row][col] == 'C')
 		mlx_put_image_to_window(var.mlx, var.win, var.collectible.img_ptr,
@@ -80,8 +80,8 @@ int	load_map(t_var var)
 			&var.floor.size.x, &var.floor.size.y);
 	var.tree.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/tree.xpm",
 			&var.tree.size.x, &var.tree.size.y);
-	var.sprite.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/sprite.xpm",
-			&var.sprite.size.x, &var.sprite.size.y);
+	var.spt.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/sprite.xpm",
+			&var.spt.size.x, &var.spt.size.y);
 	var.exit.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/exit.xpm",
 			&var.exit.size.x, &var.exit.size.y);
 	var.collectible.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/collec.xpm",

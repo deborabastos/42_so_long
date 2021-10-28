@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 22:45:38 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/25 21:10:15 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/28 17:56:41 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	check_walls(t_var var)
 	int		row;
 	int		col;
 
-	row = 0;	
+	row = 0;
 	while (row < var.map.size.y)
 	{
 		col = 0;
@@ -43,7 +43,7 @@ int	check_sprites(t_var var)
 	int		row;
 	int		col;
 
-	row = 0;	
+	row = 0;
 	while (row < var.map.size.y)
 	{
 		col = 0;

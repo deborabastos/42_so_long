@@ -6,21 +6,21 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/28 14:04:35 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/28 18:16:32 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "mlx/mlx.h"
-# include "libft/libft.h"
-
 # include <unistd.h> // write, read
 # include <stdlib.h> // malloc, free, exit
 # include <stdio.h> //printf, perror
 # include <string.h> // strerror
 # include <fcntl.h> // open, close, read
+
+# include "mlx/mlx.h"
+# include "libft/libft.h"
 
 # define PATH_MAP				"./maps/map.ber"
 
@@ -50,8 +50,7 @@ typedef struct s_img
 {
 	void		*img_ptr;
 	t_vector	size;
-	t_vector	position;
-	// int			count;
+	t_vector	pos;
 	int			*addr;
 	int			bpp;
 	int			line_len;
@@ -69,7 +68,7 @@ typedef struct s_game
 	int			count_collec;
 	int			count_steps;
 
-} t_game;
+}	t_game;
 
 typedef struct s_var
 {
@@ -77,7 +76,7 @@ typedef struct s_var
 	void		*win;
 	t_game		game;
 	t_map		map;
-	t_img		sprite;
+	t_img		spt;
 	t_img		floor;
 	t_img		tree;
 	t_img		exit;
@@ -93,7 +92,9 @@ int	get_map_y(t_var var);
 int	check_map(t_var var);
 int	print_map(t_var var);
 int	error(char *msg);
-int get_init_position(t_var *var);
-int count_collec(t_var *var);
+int	get_init_position(t_var *var);
+int	count_collec(t_var *var);
+int	check_collect(t_var *var);
+int	movements(int key, t_var *var);
 
 #endif

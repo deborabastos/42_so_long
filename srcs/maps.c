@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/28 17:56:25 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/28 18:35:56 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int	get_map(t_var *var)
 	{
 		var->map.size.x = strlen(line);
 		var->map.size.y++;
-		var->map.map_mtx[row] = line;
+		var->map.mtx[row] = line;
 		row++;
 	}
-	var->map.map_mtx[row] = line;
+	var->map.mtx[row] = line;
 	var->map.size.y++;
 	close(fd);
 	return (0);
@@ -37,16 +37,16 @@ int	get_map(t_var *var)
 
 int	print_square(t_var var, int col, int row)
 {
-	if (var.map.map_mtx[row][col] == '1')
+	if (var.map.mtx[row][col] == '1')
 		mlx_put_image_to_window(var.mlx, var.win, var.tree.img_ptr,
 			SPRITE_W * col, SPRITE_H * row);
-	else if (var.map.map_mtx[row][col] == 'P')
+	else if (var.map.mtx[row][col] == 'P')
 		mlx_put_image_to_window(var.mlx, var.win, var.spt.img_ptr,
 			SPRITE_W * col, SPRITE_H * row);
-	else if (var.map.map_mtx[row][col] == 'C')
+	else if (var.map.mtx[row][col] == 'C')
 		mlx_put_image_to_window(var.mlx, var.win, var.collectible.img_ptr,
 			SPRITE_W * col, SPRITE_H * row);
-	else if (var.map.map_mtx[row][col] == 'E')
+	else if (var.map.mtx[row][col] == 'E')
 		mlx_put_image_to_window(var.mlx, var.win, var.exit.img_ptr,
 			SPRITE_W * col, SPRITE_H * row);
 	else

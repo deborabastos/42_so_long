@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 22:45:38 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/28 17:56:41 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/28 18:38:14 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@ int	check_walls(t_var var)
 		col = 0;
 		if (row == 0 || row == (var.map.size.y - 1))
 		{
-			while (var.map.map_mtx[row][col])
+			while (var.map.mtx[row][col])
 			{
-				if (var.map.map_mtx[row][col] != '1')
+				if (var.map.mtx[row][col] != '1')
 					error("Invalid map: top or down wall not configured");
 				col++;
 			}
 		}
-		if (var.map.map_mtx[row][0] != '1' || var.map.map_mtx[row][var.map.size.x - 1] != '1')
+		if (var.map.mtx[row][0] != '1'
+			|| var.map.mtx[row][var.map.size.x - 1] != '1')
 			error("Invalid map: lateral wall not configured");
 		row++;
 	}
@@ -49,11 +50,11 @@ int	check_sprites(t_var var)
 		col = 0;
 		while (col <= var.map.size.x)
 		{
-			if (var.map.map_mtx[row][col] == 'P')
+			if (var.map.mtx[row][col] == 'P')
 				has[0] = 1;
-			if (var.map.map_mtx[row][col] == 'E')
+			if (var.map.mtx[row][col] == 'E')
 				has[1] = 1;
-			if (var.map.map_mtx[row][col] == 'C')
+			if (var.map.mtx[row][col] == 'C')
 				has[2] = 1;
 			col++;
 		}
@@ -71,7 +72,7 @@ int	check_ret(t_var var)
 	row = 0;
 	while (row < var.map.size.y)
 	{
-		if (var.map.size.x != (int)strlen(var.map.map_mtx[row]))
+		if (var.map.size.x != (int)strlen(var.map.mtx[row]))
 			error("Invalid map: not a retangle");
 		row++;
 	}
@@ -87,10 +88,11 @@ int	check_char(t_var var)
 	while (row < var.map.size.y)
 	{
 		col = 0;
-		while (var.map.map_mtx[row][col])
+		while (var.map.mtx[row][col])
 		{
-			if (var.map.map_mtx[row][col] != '0' && var.map.map_mtx[row][col] != '1' && var.map.map_mtx[row][col] != 'P'
-				&& var.map.map_mtx[row][col] != 'E' && var.map.map_mtx[row][col] != 'C')
+			if (var.map.mtx[row][col] != '0' && var.map.mtx[row][col] != '1'
+				&& var.map.mtx[row][col] != 'P' && var.map.mtx[row][col] != 'E'
+				&& var.map.mtx[row][col] != 'C')
 				error("Invalid map: char not permited");
 			col++;
 		}

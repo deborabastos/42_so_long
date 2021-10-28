@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/28 18:16:32 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/28 18:34:26 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ typedef struct s_img
 
 typedef struct s_map
 {
-	char		**map_mtx;
+	char		**mtx;
 	t_vector	size;
 }	t_map;
 

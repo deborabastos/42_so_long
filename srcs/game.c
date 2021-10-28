@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 12:24:18 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/28 17:57:28 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/28 18:36:43 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	get_init_position(t_var *var)
 		col = 0;
 		while (col <= var->map.size.x)
 		{
-			if (var->map.map_mtx[row][col] == 'P')
+			if (var->map.mtx[row][col] == 'P')
 			{
 				var->spt.pos.x = col;
 				var->spt.pos.y = row;
@@ -47,7 +47,7 @@ int	count_collec(t_var *var)
 		col = 0;
 		while (col <= var->map.size.x)
 		{
-			if (var->map.map_mtx[row][col] == 'C')
+			if (var->map.mtx[row][col] == 'C')
 				var->game.count_collec++;
 			col++;
 		}

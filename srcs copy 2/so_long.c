@@ -6,27 +6,31 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/29 17:03:57 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/29 12:06:39 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	init(t_var *var)
-{
-	var->map.mtx = malloc(var->map.size.x * var->map.size.y * sizeof(int));
-	var->game.count_steps = 0;
-	return (0);
-}
+// int	check_args(int argc, char **argv)
+// {
+// 	if (argc < 2)
+// 		error("Provide map name and extension as argument\nEx: ./so_long m.ber");
+// 	if (argc > 2)
+// 		error("Too many arguments.\nEx: ./so_long map.ber");
+// 	if (ft_strstr(argv[1], ".ber") == NULL)
+// 		error("Invalid map extension. Use .ber");
+// 	return (0);
+// }
 
-int	main(int argc, char **argv)
+int	main(void)
 {
 	t_var	var;
 
-	printf("argc %c, argv:[1] %s\n", argc, argv[1]);
-	get_x_y(&var, argv);
-	init(&var);
-	get_map(&var, argv);
+	// var.map.mtx = malloc(5 * 3 * sizeof(char));
+		
+	// printf("argc: %d - argv[1]: %s\n", argc, argv[1]);
+	get_map(&var);
 	var.mlx = mlx_init();
 	var.win = mlx_new_window(var.mlx, var.map.size.x * SPRITE_W, var.map.size.y
 			* SPRITE_H, "So long");

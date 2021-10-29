@@ -6,7 +6,7 @@
 #    By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2021/10/28 17:00:54 by dalves-p         ###   ########.fr        #
+#    Updated: 2021/10/29 15:42:15 by dalves-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS		=	srcs/so_long.c \
 
 LIBFT		=	libft/libft.a
 CFLAGS		=	-Wall -Wextra -Werror
+SANIT		=	-g3 -fsanitize=address
 # MLXFLAGS	=	-L $(PATH_MLX) -lmlx -Ilmlx -lXext -lX11 (LINUX)
 MLXFLAGS	=	-L $(PATH_MLX) -lmlx -framework OpenGL -framework AppKit -lz
 RM			=	rm -f
@@ -35,11 +36,11 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 #			@make -C libft	
 #			@make clean -C libft
-			$(CC) $(SRCS) $(LIBFT) $(MLXFLAGS) -o $(NAME)
+			$(CC) $(SRCS) $(LIBFT) $(MLXFLAGS) $(CFLAGS) $(SANIT) -o $(NAME)
 # 			clang so_long.c -L ./mlx -lmlx -framework OpenGL -framework AppKit -lz -o so_long
 
 %o:			%.c
-			$(CC) $(CFLAGS) -Imlx -c $< -o $@
+			$(CC) $(CFLAGS) $(SANIT) -Imlx -c $< -o $@
 
 run:		all
 			./$(NAME)

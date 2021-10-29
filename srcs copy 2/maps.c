@@ -6,22 +6,20 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/29 17:13:30 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/29 12:02:35 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	get_x_y(t_var *var, char **argv)
+int	get_x_y(t_var *var)
 {
 	int		fd;
 	char	*line;
 
-	var->map.size.x = 0;
-	var->map.size.y = 0;
-	fd = open(argv[1], O_RDONLY);
+	fd = open(PATH_MAP, O_RDONLY);
 	if (fd == -1)
-		error("Map not found 1");
+		error("Map not found");
 	while (ft_gnl(fd, &line))
 	{
 		var->map.size.x = strlen(line);
@@ -32,22 +30,24 @@ int	get_x_y(t_var *var, char **argv)
 	return (0);
 }
 
-int	get_map(t_var *var, char **argv)
+int	get_map(t_var *var)
 {
 	int		row;
 	int		fd;
 	char	*line;
 
 	row = 0;
-	fd = open(argv[1], O_RDONLY);
+	get_x_y(var);
+	fd = open(PATH_MAP, O_RDONLY);
 	if (fd == -1)
-		error("Map not found 2");
+		error("Map not found");
 	while (ft_gnl(fd, &line))
 	{
 		var->map.mtx[row] = line;
 		row++;
 	}
 	var->map.mtx[row] = line;
+	var->map.size.y++;
 	close(fd);
 	return (0);
 }

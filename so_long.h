@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/28 18:34:26 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/29 17:02:13 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include "mlx/mlx.h"
 # include "libft/libft.h"
 
-# define PATH_MAP				"./maps/map.ber"
+// # define PATH_MAP				"./maps/map.ber"
 
 # define X_EVENT_KEY_PRESS		2
 # define X_EVENT_KEY_EXIT		17
@@ -83,7 +83,9 @@ typedef struct s_var
 	t_img		collectible;
 }	t_var;
 
-int	get_map(t_var *var);
+int	get_x_y(t_var *var, char **argv);
+int	init(t_var *var);
+int	get_map(t_var *var, char **argv);
 int	load_map(t_var var);
 int	key_press(int key, t_var *vars);
 int	mlx_close(void);

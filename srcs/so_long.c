@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/29 17:21:32 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/29 17:34:03 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ int	init(t_var *var)
 int	check_args(int argc, char **argv)
 {
 	if (argc < 2)
-		error("Provide map name and extension as argument\nEx: ./so_long maps/map.ber");
+		error("Provide map name and extension as argument\n\
+Ex: ./so_long maps/map.ber");
 	if (argc > 2)
-		error("Too many arguments.\nEx: ./so_long maps/map.ber");
+		error("Too many arguments. Provide only map name and extension\n\
+Ex: ./so_long maps/map.ber");
 	if (ft_strstr(argv[1], ".ber") == NULL)
 		error("Invalid map extension. Use .ber");
 	return (0);

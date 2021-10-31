@@ -6,7 +6,7 @@
 #    By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2021/10/31 12:52:32 by dalves-p         ###   ########.fr        #
+#    Updated: 2021/10/31 13:34:42 by dalves-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS		=	srcs/so_long.c \
 
 LIBFT		=	libft/libft.a
 CFLAGS		=	-Wall -Wextra -Werror
-SANIT		=	-g3 -fsanitize=address
+# SANIT		=	-g3 -fsanitize=address
 MLXFLAGS	=	-L $(PATH_MLX) -lmlx -framework OpenGL -framework AppKit -lz
 RM			=	rm -f
 OBJS		=	$(SRCS:%.c=%.o)

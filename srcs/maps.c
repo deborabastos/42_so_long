@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/31 14:20:37 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/31 14:35:59 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	get_x_y(t_var *var, char **argv)
 	var->map.size.y = 0;
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		error("Map not found 1");
+		error("Map not found");
 	while (ft_gnl(fd, &line))
 	{
 		var->map.size.x = strlen(line);
@@ -43,7 +43,7 @@ int	get_map(t_var *var, char **argv)
 	row = 0;
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		error("Map not found 2");
+		error("Map not found");
 	while (ft_gnl(fd, &line))
 	{
 		var->map.mtx[row] = line;

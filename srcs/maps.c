@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/31 16:19:38 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/31 19:04:03 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,26 +54,6 @@ int	get_map(t_var *var, char **argv)
 	return (0);
 }
 
-int	print_square(t_var var, int col, int row)
-{
-	if (var.map.mtx[row][col] == '1')
-		mlx_put_image_to_window(var.mlx, var.win, var.tree.img_ptr,
-			SPRITE_W * col, SPRITE_H * row);
-	else if (var.map.mtx[row][col] == 'P')
-		mlx_put_image_to_window(var.mlx, var.win, var.spt.img_ptr,
-			SPRITE_W * col, SPRITE_H * row);
-	else if (var.map.mtx[row][col] == 'C')
-		mlx_put_image_to_window(var.mlx, var.win, var.collectible.img_ptr,
-			SPRITE_W * col, SPRITE_H * row);
-	else if (var.map.mtx[row][col] == 'E')
-		mlx_put_image_to_window(var.mlx, var.win, var.exit.img_ptr,
-			SPRITE_W * col, SPRITE_H * row);
-	else
-		mlx_put_image_to_window(var.mlx, var.win, var.floor.img_ptr,
-			SPRITE_W * col, SPRITE_H * row);
-	return (0);
-}
-
 int	print_map(t_var var)
 {
 	int		row;
@@ -85,26 +65,21 @@ int	print_map(t_var var)
 		col = 0;
 		while (col < var.map.size.x)
 		{
-			print_square(var, col, row);
+			if (var.map.mtx[row][col] == '1')
+				var.img.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/tree.xpm", &var.img.size.x, &var.img.size.y);
+			else if (var.map.mtx[row][col] == '0')
+				var.img.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/floor.xpm", &var.img.size.x, &var.img.size.y);
+			else if (var.map.mtx[row][col] == 'E')
+				var.img.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/exit.xpm", &var.img.size.x, &var.img.size.y);
+			else if (var.map.mtx[row][col] == 'C')
+				var.img.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/collec.xpm", &var.img.size.x, &var.img.size.y);
+			else if (var.map.mtx[row][col] == 'P')
+				var.img.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/sprite.xpm", &var.img.size.x, &var.img.size.y);
+			mlx_put_image_to_window(var.mlx, var.win, var.img.img_ptr, SPRITE_W * col, SPRITE_H * row);
+			mlx_destroy_image(var.mlx, var.img.img_ptr);
 			col++;
 		}
 		row++;
 	}
-	return (0);
-}
-
-int	load_map(t_var var)
-{
-	var.floor.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/floor.xpm",
-			&var.floor.size.x, &var.floor.size.y);
-	var.tree.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/tree.xpm",
-			&var.tree.size.x, &var.tree.size.y);
-	var.spt.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/sprite.xpm",
-			&var.spt.size.x, &var.spt.size.y);
-	var.exit.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/exit.xpm",
-			&var.exit.size.x, &var.exit.size.y);
-	var.collectible.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/collec.xpm",
-			&var.collectible.size.x, &var.collectible.size.y);
-	print_map(var);
 	return (0);
 }

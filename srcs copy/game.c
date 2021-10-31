@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 12:24:18 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/31 18:56:52 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/28 18:36:43 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	get_init_position(t_var *var)
 		{
 			if (var->map.mtx[row][col] == 'P')
 			{
-				var->img.pos.x = col;
-				var->img.pos.y = row;
+				var->spt.pos.x = col;
+				var->spt.pos.y = row;
 			}
 			col++;
 		}

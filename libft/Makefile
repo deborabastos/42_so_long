@@ -11,7 +11,7 @@ SRCS	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memchr.c ft_memcmp.c f
 			ft_lstlast.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_putchar.c ft_putnbr.c \
 			ft_putstr.c ft_putendl.c ft_isnegative.c ft_swap.c ft_div_mod.c ft_ultimate_div_mod.c \
 			ft_fibonacci.c ft_isprime.c ft_factorial.c ft_pow.c ft_sqrt.c ft_strlowcase.c ft_strupcase.c \
-			ft_putlnbr.c ft_utoa_base.c ft_uinttoa_base.c ft_strrev.c ft_count_words.c ft_count_digit.c \
+			ft_putlnbr.c ft_utoa_base.c ft_strrev.c ft_count_words.c ft_count_digit.c \
 			ft_gnl.c
 CFLAGS	=	-Wall -Wextra -Werror
 NAME	=	libft.a

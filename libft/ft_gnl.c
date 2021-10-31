@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 13:35:15 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/31 16:26:13 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/31 16:27:59 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ int	ft_gnl(int fd, char **line)
 	free(buffer);
 	*line = get_line(backup[fd]);
 	backup[fd] = get_backup(backup[fd]);
+	free(backup);
 	if (buffsize == 0)
 		return (0);
 	return (1);

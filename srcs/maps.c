@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/31 14:03:14 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/31 14:03:39 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	get_map(t_var *var, char **argv)
 		free(line);
 	}
 	var->map.mtx[row] = line;
-	free(line);	
+	free(line);
 	close(fd);
 	return (0);
 }

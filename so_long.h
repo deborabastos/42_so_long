@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/31 18:45:51 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/31 19:08:29 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,6 @@ int	count_collec(t_var *var);
 int	check_collect(t_var *var);
 int	movements(int key, t_var *var);
 int	free_map(t_var *var);
+int print_steps(t_var *var);
 
 #endif

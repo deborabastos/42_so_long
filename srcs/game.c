@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 12:24:18 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/31 18:56:52 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/31 19:09:13 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,16 @@ int	check_collect(t_var *var)
 		exit(0);
 	else
 		printf("You should collect all itens!!!\n");
+	return (0);
+}
+
+int print_steps(t_var *var)
+{
+	char	*str;
+
+	str = ft_itoa(var->game.count_steps);
+	mlx_string_put(var->mlx, var->win, (var->img.pos.x * SPRITE_W) + 10,
+		(var->img.pos.y * SPRITE_H) + 10, 0x833000, str);
+	free(str);
 	return (0);
 }

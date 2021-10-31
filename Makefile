@@ -6,7 +6,7 @@
 #    By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2021/10/31 12:47:25 by dalves-p         ###   ########.fr        #
+#    Updated: 2021/10/31 12:52:32 by dalves-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,24 +39,24 @@ endif
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			@ make -C libft	
-			@ make clean -C libft
-			@ $(CC) $(SRCS) $(LIBFT) $(MLXFLAGS) $(CFLAGS) $(SANIT) -o $(NAME)
+			make -C libft	
+			make clean -C libft
+			$(CC) $(SRCS) $(LIBFT) $(MLXFLAGS) $(CFLAGS) $(SANIT) -o $(NAME)
 # 			clang so_long.c -L ./mlx -lmlx -framework OpenGL -framework AppKit -lz -o so_long
 
 %o:			%.c
-			@ $(CC) $(CFLAGS) $(SANIT) -Imlx -c $< -o $@
+			$(CC) $(CFLAGS) $(SANIT) -Imlx -c $< -o $@
 
 run:		all
 			./$(NAME)
 
 clean:
-			@ $(RM) $(OBJS)
+			$(RM) $(OBJS)
 
 fclean:		clean
-			@ $(RM) $(NAME)
-			@ $(RM) *.out
-			@ make fclean -C libft/
+			$(RM) $(NAME)
+			$(RM) *.out
+			make fclean -C libft/
 
 re:			fclean all
 

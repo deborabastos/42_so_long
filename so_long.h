@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/29 17:17:26 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/31 13:45:31 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,24 @@
 # define X_EVENT_KEY_PRESS		2
 # define X_EVENT_KEY_EXIT		17
 
-# define LEFT_KEY				123	
-# define RIGHT_KEY				124	
-# define UP_KEY					126
-# define DOWN_KEY				125	
-# define A_KEY					0
-# define S_KEY					1	
-# define D_KEY					2
-# define W_KEY					13
-# define ESC 					53
+# if defined(__APPLE__) && defined(__MACH__)
+#  define LEFT_KEY				123	
+#  define RIGHT_KEY				124	
+#  define UP_KEY				126
+#  define DOWN_KEY				125	
+#  define A_KEY					0
+#  define S_KEY					1
+#  define D_KEY					2
+#  define W_KEY					13
+#  define ESC 					53
+
+# else
+#  define W_KEY					119
+#  define S_KEY					115
+#  define D_KEY					100
+#  define A_KEY					97
+#  define ESC					65307
+# endif
 
 # define SPRITE_H				64
 # define SPRITE_W				64

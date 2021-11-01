@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 12:24:18 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/01 18:20:09 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/01 20:51:38 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@ int	check_collect(t_var *var)
 {
 	if (count_collec(var) == 0)
 	{
+		mlx_destroy_window(var->mlx,var->win);
+		mlx_destroy_display(var->mlx);
+		free(var->mlx);
 		free_map(var);
 		exit(0);		
 	}

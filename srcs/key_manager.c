@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 15:23:46 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/01 20:55:22 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/01 20:57:42 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	mlx_close(t_var *var)
 {
 	mlx_destroy_window(var->mlx,var->win);
-	// mlx_destroy_display(var->mlx);
+	mlx_destroy_display(var->mlx);
 	free(var->mlx);
 	free_map(var);
 	exit(0);
@@ -29,7 +29,7 @@ int	key_press(int key, t_var *var)
 	if (key == ESC)
 	{
 		mlx_destroy_window(var->mlx,var->win);
-		// mlx_destroy_display(var->mlx);
+		mlx_destroy_display(var->mlx);
 		free(var->mlx);		
 		free_map(var);
 		exit(0);

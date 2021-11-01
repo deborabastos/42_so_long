@@ -6,11 +6,65 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 13:35:15 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/01 19:16:38 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/01 20:29:48 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdio.h>
+
+# define BUFFER_SIZE	1024
+
+static size_t	ft_strlen(const char *s)
+{
+	size_t	c;
+
+	c = 0;
+	if (!s)
+		return (0);
+	while (s[c] != '\0')
+		c++;
+	return (c);
+}
+
+static void	*ft_memcpy(char *dst, char *src, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	if (!dst && !src)
+		return (0);
+	while (i < n)
+	{
+		(dst)[i] = (src)[i];
+		i++;
+	}
+	(dst)[i] = '\0';
+	return (dst);
+}
+
+static char	*ft_strjoin(char *s1, char *s2)
+{
+	char	*ptr;
+	size_t	len_s1;
+	size_t	len_s2;
+
+	if (!s1 && !s2)
+		return (0);
+	len_s1 = ft_strlen((char *)s1);
+	len_s2 = ft_strlen((char *)s2);
+	ptr = (char *)malloc((len_s1 + len_s2 + 1) * sizeof(char));
+	if (!ptr)
+		return (0);
+	if (s1)
+		ft_memcpy(ptr, s1, len_s1);
+	ft_memcpy(ptr + (len_s1), s2, len_s2);
+	free(s1);
+	return (ptr);
+}
 
 static int	is_line(char *backup)
 {

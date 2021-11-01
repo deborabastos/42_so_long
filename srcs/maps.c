@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/01 14:41:18 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/01 14:58:24 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,12 @@ int	get_map(t_var *var, char **argv)
 		error("Map not found");
 	while (ft_gnl(fd, &line))
 	{
+		// ft_strcpy(var->map.mtx[row], line);
 		var->map.mtx[row] = line;
 		row++;
 		// free(line);
 	}
+	// ft_strcpy(var->map.mtx[row], line);
 	var->map.mtx[row] = line;
 	// free(line);
 	close(fd);

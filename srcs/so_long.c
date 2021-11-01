@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/01 14:48:44 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/01 14:56:40 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,8 @@ int	init(t_var *var)
 
 	row = 0;
 	var->map.mtx = malloc(var->map.size.y * sizeof(char *));
-	printf("ROWS %d\n", var->map.size.y);
-	printf("COL %d\n", var->map.size.x);
-	while (row < var->map.size.y)
-	{
-		var->map.mtx[row] = malloc(var->map.size.x * sizeof(char));
-		row++;
-	}
+	// printf("ROWS %d\n", var->map.size.y);
+	// printf("COL %d\n", var->map.size.x);
 	var->game.count_steps = 0;
 	return (0);
 }

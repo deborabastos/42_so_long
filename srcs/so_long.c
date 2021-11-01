@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/01 15:06:36 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/01 18:13:26 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	init(t_var *var)
 {
-	int 	row;
+	// int 	row;
 
-	row = 0;
+	// row = 0;
 	var->map.mtx = malloc(var->map.size.y * sizeof(char *));
 	// printf("ROWS %d\n", var->map.size.y);
 	// printf("COL %d\n", var->map.size.x);

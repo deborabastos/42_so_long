@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 12:24:18 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/31 19:09:13 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/01 18:20:09 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,11 @@ int	count_collec(t_var *var)
 int	check_collect(t_var *var)
 {
 	if (count_collec(var) == 0)
-		exit(0);
+	{
+		free_map(var);
+		exit(0);		
+	}
+
 	else
 		printf("You should collect all itens!!!\n");
 	return (0);

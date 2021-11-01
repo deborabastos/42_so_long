@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/01 15:01:28 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/01 15:02:00 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,6 @@ typedef struct s_var
 	t_game		game;
 	t_map		map;
 	t_img		img;
-	// t_img		spt;
-	// t_img		floor;
-	// t_img		tree;
-	// t_img		exit;
-	// t_img		collectible;
 }	t_var;
 
 int	get_x_y(t_var *var, char **argv);

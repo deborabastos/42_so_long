@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/01 18:20:46 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/01 20:59:08 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,12 @@
 # include <string.h> // strerror
 # include <fcntl.h> // open, close, read
 
+# if defined(__APPLE__) && defined(__MACH__)
 # include "mlx/mlx.h"
+# else
+# include "mlx_linux/mlx.h"
+# endif
+
 # include "libft/libft.h"
 
 # define X_EVENT_KEY_PRESS		2

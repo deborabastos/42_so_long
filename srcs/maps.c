@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/31 19:04:03 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/01 14:32:19 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int	get_x_y(t_var *var, char **argv)
 	{
 		var->map.size.x = strlen(line);
 		var->map.size.y++;
-		free(line);
+		// free(line);
 	}
 	var->map.size.y++;
-	free(line);
+	// free(line);
 	close(fd);
 	return (0);
 }

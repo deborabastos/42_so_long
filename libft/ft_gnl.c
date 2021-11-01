@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 13:35:15 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/31 16:27:59 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/10/31 22:20:03 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static char	*get_backup(char *backup)
 		free(backup);
 		return (0);
 	}
-	newbackup = malloc((ft_strlen(backup) - i + 1) * sizeof(char));
+	newbackup = malloc((ft_strlen(backup) - i) * sizeof(char));
 	if (!newbackup)
 		return (0);
 	i++;

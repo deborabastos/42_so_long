@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 13:35:15 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/01 20:29:48 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/01 20:31:05 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stdio.h>
 
 # define BUFFER_SIZE	1024
+# define OPEN_MAX		255
 
 static size_t	ft_strlen(const char *s)
 {

@@ -15,11 +15,9 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdio.h>
+#include "libft.h"
 
-# define BUFFER_SIZE	1024
-# define OPEN_MAX		255
-
-static size_t	ft_strlen(const char *s)
+static size_t	ft_strlen_gnl(const char *s)
 {
 	size_t	c;
 
@@ -31,7 +29,7 @@ static size_t	ft_strlen(const char *s)
 	return (c);
 }
 
-static void	*ft_memcpy(char *dst, char *src, size_t n)
+static void	*ft_memcpy_gnl(char *dst, char *src, size_t n)
 {
 	size_t	i;
 
@@ -47,7 +45,7 @@ static void	*ft_memcpy(char *dst, char *src, size_t n)
 	return (dst);
 }
 
-static char	*ft_strjoin(char *s1, char *s2)
+static char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*ptr;
 	size_t	len_s1;
@@ -55,14 +53,14 @@ static char	*ft_strjoin(char *s1, char *s2)
 
 	if (!s1 && !s2)
 		return (0);
-	len_s1 = ft_strlen((char *)s1);
-	len_s2 = ft_strlen((char *)s2);
+	len_s1 = ft_strlen_gnl((char *)s1);
+	len_s2 = ft_strlen_gnl((char *)s2);
 	ptr = (char *)malloc((len_s1 + len_s2 + 1) * sizeof(char));
 	if (!ptr)
 		return (0);
 	if (s1)
-		ft_memcpy(ptr, s1, len_s1);
-	ft_memcpy(ptr + (len_s1), s2, len_s2);
+		ft_memcpy_gnl(ptr, s1, len_s1);
+	ft_memcpy_gnl(ptr + (len_s1), s2, len_s2);
 	free(s1);
 	return (ptr);
 }
@@ -123,7 +121,7 @@ static char	*get_backup(char *backup)
 		free(backup);
 		return (0);
 	}
-	newbackup = malloc((ft_strlen(backup) - i + 1) * sizeof(char));
+	newbackup = malloc((ft_strlen_gnl(backup) - i + 1) * sizeof(char));
 	if (!newbackup)
 		return (0);
 	i++;
@@ -153,7 +151,7 @@ int	ft_gnl(int fd, char **line)
 			return (-1);
 		}
 		buffer[buffsize] = '\0';
-		backup[fd] = ft_strjoin(backup[fd], buffer);
+		backup[fd] = ft_strjoin_gnl(backup[fd], buffer);
 	}
 	free(buffer);
 	*line = get_line(backup[fd]);

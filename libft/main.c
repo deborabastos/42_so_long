@@ -39,7 +39,7 @@ int	main(void)
 	{
 		printf("%s\n", line);
 		free(line);
-	}			
+	}
 	free(line);
 	close(fd);
 	return (0);

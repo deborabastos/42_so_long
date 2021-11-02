@@ -26,7 +26,7 @@ SRCS		=	srcs/so_long.c \
 
 LIBFT		=	libft/libft.a
 CFLAGS		=	-Wall -Wextra -Werror
-SANIT		=	-g3 -fsanitize=address
+# SANIT		=	-g3 -fsanitize=address
 MLXFLAGS	=	-L $(PATH_MLX) -lmlx -framework OpenGL -framework AppKit -lz
 RM			=	rm -f
 OBJS		=	$(SRCS:%.c=%.o)
@@ -42,11 +42,11 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 #			make -C libft	
 #			make clean -C libft
-			$(CC) $(SRCS) $(LIBFT) $(MLXFLAGS) $(CFLAGS) $(SANIT) -o $(NAME)
+			$(CC) $(SRCS) $(LIBFT) $(MLXFLAGS) $(CFLAGS) -o $(NAME)
 # 			clang so_long.c -L ./mlx -lmlx -framework OpenGL -framework AppKit -lz -o so_long
 
 %o:			%.c
-			$(CC) $(CFLAGS) $(SANIT) -Imlx -c $< -o $@
+			$(CC) $(CFLAGS) -Imlx -c $< -o $@
 
 run:		all
 			./$(NAME) maps/map.ber

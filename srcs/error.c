@@ -14,7 +14,7 @@
 
 int	error(char *msg)
 {
-	printf("Error\n%s\n", msg);
+	printf("\e[31m\e[1mError\n%s \e[0m \n", msg);
 	exit (EXIT_FAILURE);
 	return (0);
 }

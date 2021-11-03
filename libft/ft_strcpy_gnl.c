@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   ft_strcpy_gnl.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 14:59:26 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/01 18:33:45 by dalves-p         ###   ########.fr       */
+/*   Created: 2021/11/04 00:33:26 by dalves-p          #+#    #+#             */
+/*   Updated: 2021/11/04 00:34:42 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-int	free_map(t_var *var)
+void	*ft_strcpy_gnl(char *dst, char *src, size_t n)
 {
-	int	row;
+	size_t	i;
 
-	row = 0;
-	mlx_destroy_window(var->mlx, var->win);
-	mlx_destroy_display(var->mlx);
-	free(var->mlx);
-	while (row < var->map.size.y)
+	i = 0;
+	if (!dst && !src)
+		return (0);
+	while (i < n)
 	{
-		free(var->map.mtx[row]);
-		row++;
+		(dst)[i] = (src)[i];
+		i++;
 	}
-	free(var->map.mtx);
-	return (0);
+	(dst)[i] = '\0';
+	return (dst);
 }

@@ -12,7 +12,7 @@ SRCS	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memchr.c ft_memcmp.c f
 			ft_putstr.c ft_putendl.c ft_isnegative.c ft_swap.c ft_div_mod.c ft_ultimate_div_mod.c \
 			ft_fibonacci.c ft_isprime.c ft_factorial.c ft_pow.c ft_sqrt.c ft_strlowcase.c ft_strupcase.c \
 			ft_putlnbr.c ft_utoa_base.c ft_strrev.c ft_count_words.c ft_count_digit.c \
-			ft_gnl.c
+			ft_strcpy_gnl.c ft_gnl.c
 CFLAGS	=	-Wall -Wextra -Werror -g
 NAME	=	libft.a
 HEADER	=	libft.h

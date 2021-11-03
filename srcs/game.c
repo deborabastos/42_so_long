@@ -60,19 +60,15 @@ int	check_collect(t_var *var)
 {
 	if (count_collec(var) == 0)
 	{
-		mlx_destroy_window(var->mlx,var->win);
-		mlx_destroy_display(var->mlx);
-		free(var->mlx);
 		free_map(var);
-		exit(0);		
+		exit(0);
 	}
-
 	else
 		printf("You should collect all itens!!!\n");
 	return (0);
 }
 
-int print_steps(t_var *var)
+int	print_steps(t_var *var)
 {
 	char	*str;
 

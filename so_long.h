@@ -20,9 +20,9 @@
 # include <fcntl.h> // open, close, read
 
 # if defined(__APPLE__) && defined(__MACH__)
-# include "mlx/mlx.h"
+#  include "mlx/mlx.h"
 # else
-# include "mlx_linux/mlx.h"
+#  include "mlx_linux/mlx.h"
 # endif
 
 # include "libft/libft.h"
@@ -42,10 +42,14 @@
 #  define ESC 					53
 
 # else
+#  define LEFT_KEY				65361
+#  define RIGHT_KEY				65363
+#  define UP_KEY				65362
+#  define DOWN_KEY				65364
+#  define A_KEY					97
 #  define W_KEY					119
 #  define S_KEY					115
 #  define D_KEY					100
-#  define A_KEY					97
 #  define ESC					65307
 # endif
 
@@ -107,6 +111,6 @@ int	count_collec(t_var *var);
 int	check_collect(t_var *var);
 int	movements(int key, t_var *var);
 int	free_map(t_var *var);
-int print_steps(t_var *var);
+int	print_steps(t_var *var);
 
 #endif

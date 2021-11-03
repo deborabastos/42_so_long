@@ -14,9 +14,6 @@
 
 int	mlx_close(t_var *var)
 {
-	mlx_destroy_window(var->mlx,var->win);
-	mlx_destroy_display(var->mlx);
-	free(var->mlx);
 	free_map(var);
 	exit(0);
 }
@@ -28,9 +25,6 @@ int	key_press(int key, t_var *var)
 	init_steps = var->game.count_steps;
 	if (key == ESC)
 	{
-		mlx_destroy_window(var->mlx,var->win);
-		mlx_destroy_display(var->mlx);
-		free(var->mlx);		
 		free_map(var);
 		exit(0);
 	}

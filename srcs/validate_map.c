@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 22:45:38 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/04 00:53:22 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/04 17:41:48 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	check_char(t_var var)
 		{
 			if (var.map.mtx[row][col] != '0' && var.map.mtx[row][col] != '1'
 				&& var.map.mtx[row][col] != 'P' && var.map.mtx[row][col] != 'E'
-				&& var.map.mtx[row][col] != 'C')
+				&& var.map.mtx[row][col] != 'C' && var.map.mtx[row][col] != 'Y')
 				error("Invalid map: unknown char");
 			col++;
 		}

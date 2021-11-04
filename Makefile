@@ -6,7 +6,7 @@
 #    By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2021/11/04 01:06:48 by dalves-p         ###   ########.fr        #
+#    Updated: 2021/11/04 18:10:18 by dalves-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS		=	srcs/so_long.c \
 				srcs/movements.c \
 				srcs/game.c \
 				srcs/free_map.c \
+				srcs/enemy.c \
 
 LIBFT		=	libft/libft.a
 CFLAGS		=	-Wall -Wextra -Werror
@@ -45,7 +46,7 @@ $(NAME):	$(OBJS)
 			$(CC) $(CFLAGS) -Imlx -c $< -o $@
 
 run:		all
-			./$(NAME) maps/map.ber
+			./$(NAME) maps/map_bonus.ber
 
 clean:
 			$(RM) $(OBJS)

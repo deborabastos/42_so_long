@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 12:24:18 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/03 19:40:37 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/04 01:02:55 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	check_collect(t_var *var)
 		exit(0);
 	}
 	else
-		printf("You should collect all itens!!!\n");
+		printf("\e[35m\e[1mPlease, collect all mushrooms!!!\e[0m\n");
 	return (0);
 }
 

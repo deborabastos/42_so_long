@@ -6,12 +6,9 @@
 #    By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2021/10/31 15:01:00 by dalves-p         ###   ########.fr        #
+#    Updated: 2021/11/04 01:06:48 by dalves-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-PATH_MLX	=	./mlx/
-# clang so_long.c -L ./mlx -lmlx -framework OpenGL -framework AppKit -lz
 
 NAME		=	so_long
 CC			=	clang
@@ -27,13 +24,12 @@ SRCS		=	srcs/so_long.c \
 LIBFT		=	libft/libft.a
 CFLAGS		=	-Wall -Wextra -Werror
 # SANIT		=	-g3 -fsanitize=address
-MLXFLAGS	=	-L $(PATH_MLX) -lmlx -framework OpenGL -framework AppKit -lz
+MLXFLAGS	=	-L ./mlx/ -lmlx -framework OpenGL -framework AppKit -lz
 RM			=	rm -f
 OBJS		=	$(SRCS:%.c=%.o)
 
 ifeq ($(shell uname), Linux)
-PATH_MLX	=	./mlx_linux/
-MLXFLAGS	=	-L $(PATH_MLX) -lmlx -Ilmlx -lXext -lX11
+MLXFLAGS	=	-L ./mlx_linux/ -lmlx -Ilmlx -lXext -lX11
 endif
 
 

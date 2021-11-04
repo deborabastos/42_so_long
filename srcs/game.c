@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 12:24:18 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/04 01:02:55 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/04 16:58:39 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	check_collect(t_var *var)
 		exit(0);
 	}
 	else
-		printf("\e[35m\e[1mPlease, collect all mushrooms!!!\e[0m\n");
+		printf("\e[35m\e[1mPlease, collect all diamonds!!!\e[0m\n");
 	return (0);
 }
 
@@ -73,7 +73,7 @@ int	print_steps(t_var *var)
 	char	*str;
 
 	str = ft_itoa(var->game.count_steps);
-	mlx_string_put(var->mlx, var->win, (var->img.pos.x * SPRITE_W) + 10,
+	mlx_string_put(var->mlx, var->win, (var->img.pos.x * SPRITE_W) + 5,
 		(var->img.pos.y * SPRITE_H) + 10, 0x833000, str);
 	free(str);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 15:23:46 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/04 18:18:11 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/07 18:21:20 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	mlx_close(t_var *var)
 {
-	free_map(var);
-	exit(0);
+	printf("\e[33m\e[1mGame closed! (X)\e[0m\n");
+	free_exit(var);
+	return (0);
 }
 
 int	key_press(int key, t_var *var)
@@ -25,8 +26,8 @@ int	key_press(int key, t_var *var)
 	init_steps = var->game.count_steps;
 	if (key == ESC)
 	{
-		free_map(var);
-		exit(0);
+		printf("\e[33m\e[1mGame closed! (ESC)\e[0m\n");
+		free_exit(var);
 	}
 	else
 	{		

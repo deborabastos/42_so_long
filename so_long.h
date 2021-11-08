@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/04 18:18:15 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/08 16:31:59 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ typedef struct s_game
 {
 	int			count_collec;
 	int			count_steps;
-
+	int			count_enemy;
 }	t_game;
 
 typedef struct s_var
@@ -93,6 +93,7 @@ typedef struct s_var
 	t_game		game;
 	t_map		map;
 	t_img		img;
+	t_img		enemy;
 }	t_var;
 
 int	get_x_y(t_var *var, char **argv);
@@ -111,7 +112,9 @@ int	count_collec(t_var *var);
 int	check_collect(t_var *var);
 int	movements(int key, t_var *var);
 int	free_map(t_var *var);
+int	free_exit(t_var *var);
 int	print_steps(t_var *var);
 int	enemy(int key, t_var *var);
+int	enemy_patrol(t_var *var);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 12:24:18 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/04 17:59:10 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/07 18:25:43 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ int	check_collect(t_var *var)
 {
 	if (count_collec(var) == 0)
 	{
-		free_map(var);
-		exit(0);
+		printf("\e[34m\e[1mCONGRATS\n!!!! You WON !!!!\e[0m\n");
+		free_exit(var);
 	}
 	else
 		printf("\e[35m\e[1mPlease, collect all diamonds!!!\e[0m\n");

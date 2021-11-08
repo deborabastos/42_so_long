@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 17:37:31 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/08 18:25:16 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/08 18:43:48 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	get_enemy_position(t_var *var)
 	return (0);
 }
 
-int	enemy(int key, t_var *var)
+int	step_into_enemy(int key, t_var *var)
 {
 	if ((key == A_KEY)
 		&& (var->map.mtx[var->img.pos.y][var->img.pos.x - 1] == 'Y'))

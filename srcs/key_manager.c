@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 15:23:46 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/07 18:21:20 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/08 18:44:45 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	key_press(int key, t_var *var)
 	}
 	else
 	{		
-		enemy(key, var);
+		step_into_enemy(key, var);
 		movements(key, var);
 	}
 	if (init_steps != var->game.count_steps)

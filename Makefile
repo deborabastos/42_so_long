@@ -6,7 +6,7 @@
 #    By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2021/11/04 18:10:18 by dalves-p         ###   ########.fr        #
+#    Updated: 2021/11/08 19:19:28 by dalves-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS		=	srcs/so_long.c \
 				srcs/game.c \
 				srcs/free_map.c \
 				srcs/enemy.c \
+				srcs/enemy_move.c \
 
 LIBFT		=	libft/libft.a
 CFLAGS		=	-Wall -Wextra -Werror

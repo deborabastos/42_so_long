@@ -16,3 +16,8 @@ The aim of this project is to develop a simple top-view 2D game, using miniLibX 
 - https://github.com/josuhee/42_so_long
 - https://github.com/jalves-d/so_long-42-Lisbon
 - 
+
+## NEXT STEPS
+- More than one enemy
+- Randomization of enemy patrol
+- 

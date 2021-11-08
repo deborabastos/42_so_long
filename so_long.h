@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/08 18:43:56 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/08 19:20:45 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,9 +112,10 @@ int	count_collec(t_var *var);
 int	check_collect(t_var *var);
 int	movements(int key, t_var *var);
 int	free_map(t_var *var);
-int	free_exit(t_var *var);
+int	free_exit(t_var *var, char *msg);
 int	print_steps(t_var *var);
 int	step_into_enemy(int key, t_var *var);
+int	get_enemy_position(t_var *var);
 int	enemy_patrol(t_var *var);
 
 #endif

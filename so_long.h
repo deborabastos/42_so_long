@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/08 19:20:45 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/09 13:59:04 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,5 +117,6 @@ int	print_steps(t_var *var);
 int	step_into_enemy(int key, t_var *var);
 int	get_enemy_position(t_var *var);
 int	enemy_patrol(t_var *var);
+int	enemy_animation(t_var *var);
 
 #endif

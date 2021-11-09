@@ -20,4 +20,4 @@ The aim of this project is to develop a simple top-view 2D game, using miniLibX 
 ## NEXT STEPS
 - More than one enemy
 - Randomization of enemy patrol
-- 
+- Srite animation

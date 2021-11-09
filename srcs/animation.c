@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   animation.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 14:59:26 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/08 19:38:33 by dalves-p         ###   ########.fr       */
+/*   Created: 2021/11/08 19:42:35 by dalves-p          #+#    #+#             */
+/*   Updated: 2021/11/09 14:05:18 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	free_map(t_var *var)
+int	enemy_animation(t_var *var)
 {
-	int	row;
-
-	row = 0;
-	mlx_destroy_window(var->mlx, var->win);
-	// mlx_destroy_display(var->mlx);
-	free(var->mlx);
-	while (row < var->map.size.y)
-	{
-		free(var->map.mtx[row]);
-		row++;
-	}
-	free(var->map.mtx);
+	if (var->enemy.pos.x % 2 == 0)
+		var->img.img_ptr = mlx_xpm_file_to_image(var->mlx, "./img/enemy1.xpm",
+				&var->img.size.x, &var->img.size.y);
+	else
+		var->img.img_ptr = mlx_xpm_file_to_image(var->mlx, "./img/enemy2.xpm",
+				&var->img.size.x, &var->img.size.y);
 	return (0);
-}
-
-int	free_exit(t_var *var, char *msg)
-{
-	printf("%s", msg);
-	free_map(var);
-	exit(0);
 }

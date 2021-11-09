@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/09 15:31:15 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/09 19:41:08 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	load_map(t_var var, int row, int col)
 		var.img.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/collec.xpm",
 				&var.img.size.x, &var.img.size.y);
 	else if (var.map.mtx[row][col] == 'P')
-		var.img.img_ptr = mlx_xpm_file_to_image(var.mlx, "./img/sprite.xpm",
+		var.img.img_ptr = mlx_xpm_file_to_image(var.mlx, var.img.spt_path,
 				&var.img.size.x, &var.img.size.y);
 	else if (var.map.mtx[row][col] == 'Y' && var.has_enemy > 0)
 		enemy_animation(&var);

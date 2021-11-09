@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/09 19:35:46 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/09 19:40:51 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	init(t_var *var)
 	var->enemy.pos.x = 0;
 	var->enemy.pos.y = 0;
 	var->has_enemy = 0;
+	var->img.spt_path = "./img/sprite.xpm";
 	return (0);
 }
 

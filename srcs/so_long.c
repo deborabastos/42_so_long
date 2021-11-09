@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/08 16:32:14 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/09 14:39:09 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	init(t_var *var)
 	var->map.mtx[var->map.size.y] = NULL;
 	var->game.count_steps = 0;
 	var->game.count_enemy = 0;
+	var->enemy.pos.x = 0;
+	var->enemy.pos.y = 0;
 	return (0);
 }
 

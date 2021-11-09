@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 17:37:31 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/09 14:06:40 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/09 18:03:33 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ int	enemy_move_up(t_var *var)
 
 int	enemy_patrol(t_var *var)
 {
-	get_enemy_position(var);
 	usleep(200000);
+	get_enemy_position(var);
 	if ((var->map.mtx[var->enemy.pos.y][var->enemy.pos.x + 1] == '0'
 		|| var->map.mtx[var->enemy.pos.y][var->enemy.pos.x + 1] == 'P')
 		&& var->game.count_enemy < var->map.size.x)

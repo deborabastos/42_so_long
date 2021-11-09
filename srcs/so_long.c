@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/09 14:39:09 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/09 18:02:40 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	init(t_var *var)
 	var->game.count_enemy = 0;
 	var->enemy.pos.x = 0;
 	var->enemy.pos.y = 0;
+	var->has_enemy = 0;
 	return (0);
 }
 
@@ -55,11 +56,14 @@ int	main(int argc, char **argv)
 	var.win = mlx_new_window(var.mlx, var.map.size.x * SPRITE_W, var.map.size.y
 			* SPRITE_H, "So long");
 	get_init_position(&var);
+	check_enemy(&var);
 	count_collec(&var);
 	print_map(var);
 	mlx_hook(var.win, X_EVENT_KEY_PRESS, 1L << 0, key_press, &var);
 	mlx_hook(var.win, X_EVENT_KEY_EXIT, 1L << 0, mlx_close, &var);
 	mlx_expose_hook(var.win, ft_expose, &var);
-	mlx_loop_hook(var.mlx, enemy_patrol, &var);
+	printf("%d\n", var.has_enemy);
+	if (var.has_enemy > 0)
+		mlx_loop_hook(var.mlx, enemy_patrol, &var);
 	mlx_loop(var.mlx);
 }

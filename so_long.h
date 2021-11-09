@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/09 13:59:04 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:28:31 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,12 +94,14 @@ typedef struct s_var
 	t_map		map;
 	t_img		img;
 	t_img		enemy;
+	int			has_enemy;
 }	t_var;
 
 int	get_x_y(t_var *var, char **argv);
 int	init(t_var *var);
 int	get_map(t_var *var, char **argv);
 int	check_args(int argc, char **argv);
+int	check_enemy(t_var *var);
 int	print_map(t_var var);
 int	key_press(int key, t_var *vars);
 int	mlx_close(t_var *var);

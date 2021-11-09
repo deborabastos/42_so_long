@@ -6,11 +6,31 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 17:37:31 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/08 19:20:03 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:28:18 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+int	check_enemy(t_var *var)
+{
+	int		row;
+	int		col;
+
+	row = 0;
+	while (row < var->map.size.y)
+	{
+		col = 0;
+		while (var->map.mtx[row][col])
+		{
+			if (var->map.mtx[row][col] == 'Y')
+				var->has_enemy++;
+			col++;
+		}
+		row++;
+	}
+	return (0);
+}
 
 int	get_enemy_position(t_var *var)
 {

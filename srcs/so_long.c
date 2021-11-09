@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:29 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/09 18:02:40 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/09 19:35:46 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ int	main(int argc, char **argv)
 	mlx_hook(var.win, X_EVENT_KEY_PRESS, 1L << 0, key_press, &var);
 	mlx_hook(var.win, X_EVENT_KEY_EXIT, 1L << 0, mlx_close, &var);
 	mlx_expose_hook(var.win, ft_expose, &var);
-	printf("%d\n", var.has_enemy);
 	if (var.has_enemy > 0)
 		mlx_loop_hook(var.mlx, enemy_patrol, &var);
 	mlx_loop(var.mlx);

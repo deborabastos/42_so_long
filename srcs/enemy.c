@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 17:37:31 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/09 14:02:53 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/09 14:06:40 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	enemy_move_right(t_var *var)
 {
 	if (var->map.mtx[var->enemy.pos.y][var->enemy.pos.x + 1] == 'P')
-		free_exit(var, "\e[31m\e[1mGAME OVER\n!!!! You LOST 1 !!!!\e[0m\n");
+		free_exit(var, "\e[31m\e[1mGAME OVER\n!!!! You LOST !!!!\e[0m\n");
 	var->map.mtx[var->enemy.pos.y][var->enemy.pos.x] = '0';
 	var->enemy.pos.x += 1;
 	var->map.mtx[var->enemy.pos.y][var->enemy.pos.x] = 'Y';
@@ -26,7 +26,7 @@ int	enemy_move_right(t_var *var)
 int	enemy_move_down(t_var *var)
 {
 	if (var->map.mtx[var->enemy.pos.y + 1][var->enemy.pos.x] == 'P')
-		free_exit(var, "\e[31m\e[1mGAME OVER\n!!!! You LOST 2 !!!!\e[0m\n");
+		free_exit(var, "\e[31m\e[1mGAME OVER\n!!!! You LOST !!!!\e[0m\n");
 	var->map.mtx[var->enemy.pos.y][var->enemy.pos.x] = '0';
 	var->enemy.pos.y += 1;
 	var->map.mtx[var->enemy.pos.y][var->enemy.pos.x] = 'Y';
@@ -37,7 +37,7 @@ int	enemy_move_down(t_var *var)
 int	enemy_move_left(t_var *var)
 {
 	if (var->map.mtx[var->enemy.pos.y][var->enemy.pos.x - 1] == 'P')
-		free_exit(var, "\e[31m\e[1mGAME OVER\n!!!! You LOST 3 !!!!\e[0m\n");
+		free_exit(var, "\e[31m\e[1mGAME OVER\n!!!! You LOST !!!!\e[0m\n");
 	var->map.mtx[var->enemy.pos.y][var->enemy.pos.x] = '0';
 	var->enemy.pos.x -= 1;
 	var->map.mtx[var->enemy.pos.y][var->enemy.pos.x] = 'Y';
@@ -48,7 +48,7 @@ int	enemy_move_left(t_var *var)
 int	enemy_move_up(t_var *var)
 {
 	if (var->map.mtx[var->enemy.pos.y - 1][var->enemy.pos.x] == 'P')
-		free_exit(var, "\e[31m\e[1mGAME OVER\n!!!! You LOST 4 !!!!\e[0m\n");
+		free_exit(var, "\e[31m\e[1mGAME OVER\n!!!! You LOST !!!!\e[0m\n");
 	var->map.mtx[var->enemy.pos.y][var->enemy.pos.x] = '0';
 	var->enemy.pos.y -= 1;
 	var->map.mtx[var->enemy.pos.y][var->enemy.pos.x] = 'Y';

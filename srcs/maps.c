@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/09 15:02:01 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:02:34 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ int	load_map(t_var var, int row, int col)
 	mlx_put_image_to_window(var.mlx, var.win, var.img.img_ptr, SPRITE_W * col,
 		SPRITE_H * row);
 	mlx_destroy_image(var.mlx, var.img.img_ptr);
-	mlx_destroy_image(var.mlx, var.enemy.img_ptr);
 	return (0);
 }
 

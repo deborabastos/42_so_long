@@ -6,7 +6,7 @@
 #    By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2021/11/08 19:43:13 by dalves-p         ###   ########.fr        #
+#    Updated: 2021/11/11 16:57:29 by dalves-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ SRCS		=	srcs/so_long.c \
 
 LIBFT		=	libft/libft.a
 CFLAGS		=	-Wall -Wextra -Werror
-# SANIT		=	-g3 -fsanitize=address
 MLXFLAGS	=	-L ./mlx/ -lmlx -framework OpenGL -framework AppKit -lz
 RM			=	rm -f
 OBJS		=	$(SRCS:%.c=%.o)
@@ -39,10 +38,9 @@ endif
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-#			make -C libft	
-#			make clean -C libft
+			make -C libft	
+			make clean -C libft
 			$(CC) $(SRCS) $(LIBFT) $(MLXFLAGS) $(CFLAGS) -o $(NAME)
-# 			clang so_long.c -L ./mlx -lmlx -framework OpenGL -framework AppKit -lz -o so_long
 
 %o:			%.c
 			$(CC) $(CFLAGS) -Imlx -c $< -o $@
@@ -56,7 +54,7 @@ clean:
 fclean:		clean
 			$(RM) $(NAME)
 			$(RM) *.out
-#			make fclean -C libft/
+			make fclean -C libft/
 
 re:			fclean all
 
@@ -65,6 +63,6 @@ git:
 	@git commit -m "$m"
 	@git push
 	@echo "Commit sent to github"
-# Para chamar: make git m="meu commit"
+# To call: make git m="my commit"
 
 .PHONY:		all clean fclean re

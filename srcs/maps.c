@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:58:53 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/09 19:41:08 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/11 16:53:59 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	get_x_y(t_var *var, char **argv)
 		error("Map not found");
 	while (ft_gnl(fd, &line))
 	{
-		var->map.size.x = strlen(line);
+		var->map.size.x = ft_strlen(line);
 		var->map.size.y++;
 		free(line);
 	}

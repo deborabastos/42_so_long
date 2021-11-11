@@ -6,18 +6,17 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:06:36 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/11/09 19:40:14 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/11/11 16:54:38 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include <unistd.h> // write, read
-# include <stdlib.h> // malloc, free, exit
-# include <stdio.h> //printf, perror
-# include <string.h> // strerror
-# include <fcntl.h> // open, close, read
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <fcntl.h>
 
 # if defined(__APPLE__) && defined(__MACH__)
 #  include "mlx/mlx.h"

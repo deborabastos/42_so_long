@@ -6,7 +6,7 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 20:58:18 by dalves-p          #+#    #+#             */
-/*   Updated: 2021/10/28 18:42:06 by dalves-p         ###   ########.fr       */
+/*   Updated: 2021/12/16 16:15:24 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,4 @@ int	error(char *msg)
 {
 	printf("\e[31m\e[1mError\n%s \e[0m \n", msg);
 	exit (EXIT_FAILURE);
-	return (0);
 }
